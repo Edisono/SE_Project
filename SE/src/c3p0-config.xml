@@ -1,0 +1,25 @@
+<c3p0-config>
+
+	<default-config>
+		<property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+		<property name="jdbcUrl">jdbc:mysql://localhost:3306/culturedb?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT%2B8&amp;useSSL=false</property>
+		<property name="user">root</property>
+		<property name="password">123</property>
+		
+		<property name="acquireIncrement">5</property>
+		<property name="intialPoolsize">10</property>
+		<property name="maxPoolsize">20</property>
+	</default-config>
+	
+	<named-config>
+		<property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+		<property name="jdbcUrl">jdbc:mysql://localhost:3306/culturedb?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT%2B8&amp;useSSL=false</property>
+		<property name="user">root</property>
+		<property name="password">123</property>
+		
+		<property name="acquireIncrement">5</property>
+		<property name="intialPoolsize">10</property>
+		<property name="maxPoolsize">20</property>
+	</named-config>
+	
+</c3p0-config>
