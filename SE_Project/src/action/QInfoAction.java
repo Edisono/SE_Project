@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
-import dao.QDao;
 import entity.QInfo;
 import entity.UserInfo;
 
@@ -56,11 +55,11 @@ public class QInfoAction {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		UserInfo user = (UserInfo)request.getSession().getAttribute("user");
 		
-		QInfo news=new QInfo();
-		news=qd.findNewsById(qid);
+		QInfo q=new QInfo();
+		q=qd.findQById(qid);
 		
 		
-		request.getSession().setAttribute("news", news);
+		request.getSession().setAttribute("q", q);
 		return "showDetail";
 	}
 }

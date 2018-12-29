@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
-import dao.ADao;
 import entity.AInfo;
 import entity.UserInfo;
 
@@ -56,11 +55,11 @@ public class AInfoAction {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		UserInfo user = (UserInfo)request.getSession().getAttribute("user");
 		
-		AInfo news=new AInfo();
-		news=ad.findNewsById(aid);
+		AInfo a=new AInfo();
+		a=ad.findAById(aid);
 		
 		
-		request.getSession().setAttribute("news", news);
+		request.getSession().setAttribute("a", a);
 		return "showDetail";
 	}
 }
