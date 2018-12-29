@@ -22,17 +22,7 @@ public class NewsInfoAction extends ActionSupport {
 
 	private NewsDao nd=new NewsDao();
 	private int nid;
-	private String ncontent;
 	
-	
-	public String getNcontent() {
-		return ncontent;
-	}
-
-	public void setNcontent(String ncontent) {
-		this.ncontent = ncontent;
-	}
-
 	public int getNid() {
 		return nid;
 	}
@@ -57,20 +47,6 @@ public class NewsInfoAction extends ActionSupport {
 		news=nd.findNewsById(nid);
 		
 		ServletActionContext.getRequest().getSession().setAttribute("news", news);
-		
-		return "showDetail";
-	}
-	
-	public String add() throws SQLException{
-		
-		HttpServletRequest request = ServletActionContext.getRequest();
-		UserInfo user = (UserInfo)request.getSession().getAttribute("user");
-		
-		NewsInfo news=new NewsInfo();
-		news=nd.findNewsById(nid);
-		
-		
-		request.getSession().setAttribute("news", news);
 		return "showDetail";
 	}
 	
