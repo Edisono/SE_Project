@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="s" uri="/struts-tags"%>
 <!doctype html>
 <html lang="en" dir="ltr">
   <head>
@@ -147,35 +148,59 @@
                           <i class="fe fe-align-justify">被留言的title</i>
                           </nav>
                           <div class="float-right">
-                          <a href="#"> <button type="button" class="btn btn-primary btn-space btn-sm">更新</button> </a> 
                           <a href="#"> <button type="button" class="btn btn-primary btn-space btn-sm">删除</button> </a> 
                           </div>
                     </article>
                   </div>
-                   <div class="card-body">
+
+              
+               </div>
+
+<s:iterator value="#session.messages" var="xx" status="st">  
+
+<div class="card">
+                  <div class="card-body">
                     <article class="media">
-                     
                       <div class="media-body">
                         <div class="content">
                           <p class="h5">
-                            留言人姓名 <small class="float-right text-muted">留言时间</small>
+                            留言人姓名:<s:property value="#xx.username"/> <small class="float-right text-muted">留言时间:<s:property value="#xx.mdate"/></small>
                           </p>
                           <p>
-                            留言内容
+                            留言内容:<s:property value="#xx.mcontent"/>
                           </p>
-                         <nav class="d-flex text-muted">
-                          <i class="fe fe-navigation">被留言的类型 展会|咨询|供求|</i>
+                           <nav class="d-flex text-muted">
+                          <i class="fe fe-navigation">被留言的类型 <s:if test="#xx.mobjtype == 0">咨询</s:if>
+<s:else>
+	<s:if test="#xx.mobjtype == 1">展会</s:if>
+	<s:else>
+		<s:if test="#xx.mobjtype == 2">咨询</s:if>
+		<s:else>
+			<s:if test="#xx.mobjtype == 3">咨询</s:if>
+			<s:else>
+				<s:if test="#xx.mobjtype == 4">咨询</s:if>
+			</s:else>
+		</s:else>
+	</s:else>
+</s:else>
+</i>
                           &nbsp;&nbsp;&nbsp;
-                          <i class="fe fe-align-justify">被留言的title</i>
+                          <i class="fe fe-align-justify">名称:<s:property value="#xx.mobjtitle"/></i>
                           </nav>
                           <div class="float-right">
-                          <a href="#"> <button type="button" class="btn btn-primary btn-space btn-sm">更新</button> </a> 
-                          <a href="#"> <button type="button" class="btn btn-primary btn-space btn-sm">删除</button> </a> 
+                          <a href="message_delete?mid=<s:property value="#xx.mid"/>"> <button type="button" class="btn btn-primary btn-space btn-sm">删除</button> </a> 
                           </div>
                     </article>
                   </div>
+
               
                </div>
+
+
+</s:iterator>
+
+
+
 
 
 
