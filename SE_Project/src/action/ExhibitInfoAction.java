@@ -35,7 +35,7 @@ public class ExhibitInfoAction {
 	public String show() throws SQLException{
 		
 		ArrayList<ExhibitInfo> exhibitList=new ArrayList<ExhibitInfo>();
-		exhibitList=(ArrayList<ExhibitInfo>) ed.findAllNews();
+		exhibitList=(ArrayList<ExhibitInfo>) ed.findAllExhibit();
 		
 		ServletActionContext.getRequest().getSession().setAttribute("exhibitList", exhibitList);
 		
@@ -45,7 +45,7 @@ public class ExhibitInfoAction {
 	public String showDetail() throws SQLException{
 		
 		ExhibitInfo exhibit=new ExhibitInfo();
-		exhibit=ed.findNewsById(eid);
+		exhibit=ed.findExhibitById(eid);
 		
 		ServletActionContext.getRequest().getSession().setAttribute("exhibit", exhibit);
 		return "showDetail";

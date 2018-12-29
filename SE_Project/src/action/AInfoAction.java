@@ -34,7 +34,7 @@ public class AInfoAction {
 	public String show() throws SQLException{
 		
 		ArrayList<AInfo> aList=new ArrayList<AInfo>();
-		aList=(ArrayList<AInfo>) ad.findAllNews();
+		aList=(ArrayList<AInfo>) ad.findAllA();
 		
 		ServletActionContext.getRequest().getSession().setAttribute("aList", aList);
 		
@@ -44,7 +44,7 @@ public class AInfoAction {
 	public String showDetail() throws SQLException{
 		
 		AInfo a=new AInfo();
-		a=ad.findNewsById(aid);
+		a=ad.findAById(aid);
 		
 		ServletActionContext.getRequest().getSession().setAttribute("a", a);
 		return "showDetail";
