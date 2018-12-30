@@ -1,14 +1,13 @@
 
 package action;  
 
-import java.sql.*;
-import java.sql.Connection;
-import java.util.ArrayList;
 
-import javax.servlet.http.HttpServletRequest;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
-import org.eclipse.jdt.internal.compiler.ast.MarkerAnnotation;
 
 import com.opensymphony.xwork2.ActionSupport;
 //import com.sun.corba.se.pept.transport.Connection;
@@ -16,38 +15,141 @@ import com.opensymphony.xwork2.ActionSupport;
 import dao.UserDao;
 import entity.UserInfo;
 
+@SuppressWarnings("serial")
 public class RegisterAction extends ActionSupport {
 
-	private String email;// ???ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½??ï¿½?
-	private String password;// ï¿½ï¿½??ï¿½ï¿½???ï¿½ï¿½??
-	private String phone;// ??ï¿½?ï¿½ï¿½??ï¿½?ï¿½ï¿½???ï¿½ï¿½?ï¿½ï¿½???ï¿½ï¿½?ï¿½ï¿½????ï¿½ï¿½??ï¿½?ï¿½ï¿½???ï¿½ï¿½??
-	private String address;// ??ï¿½?ï¿½ï¿½??ï¿½?ï¿½ï¿½???ï¿½ï¿½?ï¿½ï¿½???ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½??ï¿½?
-	private String username;// ??ï¿½?ï¿½ï¿½??ï¿½?ï¿½ï¿½????ï¿½ï¿½??ï¿½?
-	private String QQ;// ??ï¿½?ï¿½ï¿½???ï¿½ï¿½??QQ
-	private String profile;// ??ï¿½?ï¿½ï¿½??ï¿½?ï¿½ï¿½???ï¿½ï¿½?ï¿½å¨´ï¿½ï¿½??ï¿½?
-	private String avator;// å©¢ï¿½?ï¿½ï¿½ï¿½ï¿½???ï¿½ï¿½??
+	private String email;
+	private String password;
+	private String phone;
+	private String address;
+	private String username;
+	private String QQ;
+	private String profile;
+	private File avator;
+	private String avatorFileName;
 	
-	    public String execute() throws Exception {
-	    	
-	    UserInfo user = new UserInfo();
-	    user.setAddress(address);
-	    user.setEmail(email);
-	    user.setPassword(password);
-	    user.setPhone(phone);
-	    user.setProfile(profile);
-	    user.setAvator(avator);
-	    user.setQQ(QQ);
-	    user.setUsername(username);
-	    user.setRole(1);
-     
+	
+	
+    public String getAvatorFileName() {
+		return avatorFileName;
+	}
 
-	   UserDao dao = new UserDao();
-	   if(dao.insertUser(user)) {
-		   return "success";
-	   }else {
-		   return "false";
-	   }
-	   
-	    }
+
+	public void setAvatorFileName(String avatorFileName) {
+		this.avatorFileName = avatorFileName;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+	public String getPhone() {
+		return phone;
+	}
+
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+	public String getQQ() {
+		return QQ;
+	}
+
+
+	public void setQQ(String qQ) {
+		QQ = qQ;
+	}
+
+
+	public String getProfile() {
+		return profile;
+	}
+
+
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+
+
+	public File getAvator() {
+		return avator;
+	}
+
+
+	public void setAvator(File avator) {
+		this.avator = avator;
+	}
+
+
+	public String execute() throws Exception {
+	String realPath = ServletActionContext.getServletContext().getRealPath("/demo/avator");
+	File file = new File(realPath);
+	//»ñÈ¡ÎÄ¼þÄ©Î² eg£º.jpg
+	String fileend = avatorFileName.substring(avatorFileName.lastIndexOf('.'), avatorFileName.length());
+	if(!file.exists()) file.mkdirs();
+	try {
+		FileUtils.copyFile(avator,new File(file,this.email+fileend));
+	}catch (IOException e) {
+	  e.printStackTrace();
+	}
+    UserInfo user = new UserInfo();
+    user.setAddress(address);
+    user.setEmail(email);
+    user.setPassword(password);
+    user.setPhone(phone);
+    user.setProfile(profile);
+    user.setAvator("/demo/avator/"+email+fileend);
+    user.setQQ(QQ);
+    user.setUsername(username);
+    user.setRole(1);
+ 
+
+   UserDao dao = new UserDao();
+   if(dao.insertUser(user)) {
+	   return "success";
+   }else {
+	   return "false";
+   }
+   
+  }
 
 }
