@@ -5,16 +5,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
+import dao.MessageDao;
 import dao.NewsDao;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 import db.C3P0JdbcUtil;
+import entity.MessageInfo;
 import entity.NewsInfo;
 import entity.UserInfo;
 
@@ -46,7 +49,10 @@ public class NewsInfoAction extends ActionSupport {
 		NewsInfo news=new NewsInfo();
 		news=nd.findNewsById(nid);
 		
+		List<MessageInfo> messagesList=nd.getNewsMessage(nid);
+		
 		ServletActionContext.getRequest().getSession().setAttribute("news", news);
+		ServletActionContext.getRequest().getSession().setAttribute("messagesList", messagesList);
 		return "showDetail";
 	}
 	
