@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
+import dao.ExhibitDao;
 import dao.NewsDao;
 import entity.ExhibitInfo;
 import entity.UserInfo;
