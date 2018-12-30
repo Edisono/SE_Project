@@ -11,7 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import db.C3P0JdbcUtil;
-import entity.ExhibitInfo;;
+import entity.ExhibitInfo;
+import entity.MessageInfo;;
 
 public class ExhibitDao {
 	public List<ExhibitInfo> findAllExhibit() throws SQLException{
@@ -35,6 +36,36 @@ public class ExhibitDao {
 			exhibit.setUsername(rs.getString("username"));
 			exhibit.setEimage(rs.getString("eimage"));
 			list.add(exhibit);
+		}	     
+		conn.close();
+		ps.close();
+		rs.close();
+		return list;
+	}
+	
+	public List<MessageInfo> getExhibitMessage(int eId) throws SQLException{
+		List<MessageInfo> list = new ArrayList<MessageInfo>();
+		Connection conn=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		MessageInfo message= null;
+		//conn=DBUtil.getConnection();
+		conn=C3P0JdbcUtil.getConnection();
+		String sql = "SELECT * FROM MessageInfo WHERE mobjid=? and mobjtype= 1 order by pid desc";
+		ps = conn.prepareStatement(sql);
+		ps.setString(1, String.valueOf(eId));
+		rs=ps.executeQuery();
+		while(rs.next()) {
+			message = new MessageInfo();
+			message.setMid(rs.getInt("mid"));
+			message.setUid(rs.getInt("uid"));
+			message.setUsername(rs.getString("username"));
+			message.setMdate(rs.getString("mdata"));
+			message.setMcontent(rs.getString("mcontent"));
+			message.setMobjid(rs.getInt("mobjid"));
+			message.setMobjtitle(rs.getString("mobjtitle"));
+			message.setMobjtype(rs.getInt("mobjtype"));
+			list.add(message);
 		}	     
 		conn.close();
 		ps.close();

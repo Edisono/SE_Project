@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import db.C3P0JdbcUtil;
-import entity.AInfo;;
+import entity.AInfo;
+import entity.MessageInfo;;
 
 public class ADao {
 	public List<AInfo> findAllA() throws SQLException{
@@ -32,6 +33,36 @@ public class ADao {
 			a.setAcompany(rs.getString("acompany"));
 			a.setAimage(rs.getString("aimage"));
 			list.add(a);
+		}	     
+		conn.close();
+		ps.close();
+		rs.close();
+		return list;
+	}
+	
+	public List<MessageInfo> getAMessage(int aId) throws SQLException{
+		List<MessageInfo> list = new ArrayList<MessageInfo>();
+		Connection conn=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		MessageInfo message= null;
+		//conn=DBUtil.getConnection();
+		conn=C3P0JdbcUtil.getConnection();
+		String sql = "SELECT * FROM MessageInfo WHERE mobjid=? and mobjtype=2 order by pid desc";
+		ps = conn.prepareStatement(sql);
+		ps.setString(1, String.valueOf(aId));
+		rs=ps.executeQuery();
+		while(rs.next()) {
+			message = new MessageInfo();
+			message.setMid(rs.getInt("mid"));
+			message.setUid(rs.getInt("uid"));
+			message.setUsername(rs.getString("username"));
+			message.setMdate(rs.getString("mdata"));
+			message.setMcontent(rs.getString("mcontent"));
+			message.setMobjid(rs.getInt("mobjid"));
+			message.setMobjtitle(rs.getString("mobjtitle"));
+			message.setMobjtype(rs.getInt("mobjtype"));
+			list.add(message);
 		}	     
 		conn.close();
 		ps.close();

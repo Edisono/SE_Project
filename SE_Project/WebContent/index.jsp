@@ -57,8 +57,8 @@
                 </div>
                 <div class="dropdown">
                   <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
-                  	<!--  用户头像  #session.user.avator [当修改头像的时候 记住更新该属性值]-->
-                    <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
+                  	
+                    <span class="avatar" style="background-image: url(#session.user.avator)"></span>
                     <span class="ml-2 d-none d-lg-block">
                       <span class="text-default"><s:property value="#session.user.username"/></span>
                       <small class="text-muted d-block mt-1">
@@ -80,7 +80,6 @@
                		 </s:if>
                     <!-- 用户功能条 -->
                     <s:elseif test="#session.user.role == 1">
-                    <!-- 需要获取用户信息然后跳转到 modifyInfo.jsp 需要使用s:url -->
                     <a class="dropdown-item" href="./modifyInfo.jsp">
                       <i class="dropdown-icon fe fe-user"></i> 设置
                     </a>
