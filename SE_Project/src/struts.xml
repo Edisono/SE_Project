@@ -18,7 +18,7 @@
 		<!-- 资讯的action -->
 		<action name="news_*" class="action.NewsInfoAction" method="{1}">
 			<result name="show">/newsInfo.jsp</result>
-			<result name="showDetail">/showNewsDetail.jsp</result>
+			<result name="showDetail">/newsDetailInfo.jsp</result>
 		</action>
 
 		<!-- 供应的action -->
