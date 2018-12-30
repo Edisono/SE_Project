@@ -75,7 +75,7 @@ public class MessageAction extends ActionSupport {
 		
 		HttpServletRequest request = ServletActionContext.getRequest();
 		UserInfo user = (UserInfo)request.getSession().getAttribute("user");
-		int mobjtype=(int)request.getSession().getAttribute("mobjtype");
+		int mobjtype=(Integer)request.getSession().getAttribute("mobjtype");
 		int mobjid = 0;
 		String mobjtitle = null;
 		switch (mobjtype) {

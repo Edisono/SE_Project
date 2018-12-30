@@ -135,8 +135,8 @@ public class ProductDao {
 		ps.setDouble(3, product.getPprice());
 		ps.setString(4, product.getPintroduce());
 		ps.setString(5, product.getPimage());
-		ps.setInt(6, product.getPuid());
-		ps.setString(7, product.getPusername());
+		ps.setInt(6, product.getPid());
+		ps.setString(7, product.getPname());
 		int flag = ps.executeUpdate();
 		conn.close();
 		ps.close();
@@ -175,8 +175,8 @@ public class ProductDao {
 		ps.setDouble(3, product.getPprice());
 		ps.setString(4, product.getPintroduce());
 		ps.setString(5, product.getPimage());
-		ps.setInt(6, product.getPuid());
-		ps.setString(7, product.getPusername());
+		ps.setInt(6, product.getPid());
+		ps.setString(7, product.getPname());
 		ps.setInt(8, product.getPid());
 		int flag = ps.executeUpdate();
 		conn.close();

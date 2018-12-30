@@ -35,7 +35,7 @@ public class QInfoAction {
 	public String show() throws SQLException{
 		
 		ArrayList<QInfo> qList=new ArrayList<QInfo>();
-		qList=(ArrayList<QInfo>) qd.findAllNews();
+		qList=(ArrayList<QInfo>) qd.findAllQ();
 		
 		ServletActionContext.getRequest().getSession().setAttribute("qList", qList);
 		
@@ -45,7 +45,7 @@ public class QInfoAction {
 	public String showDetail() throws SQLException{
 		
 		QInfo q=new QInfo();
-		q=qd.findNewsById(qid);
+		q=qd.findQById(qid);
 		
 		ServletActionContext.getRequest().getSession().setAttribute("q", q);
 		return "showDetail";
@@ -56,11 +56,11 @@ public class QInfoAction {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		UserInfo user = (UserInfo)request.getSession().getAttribute("user");
 		
-		QInfo news=new QInfo();
-		news=qd.findNewsById(qid);
+		QInfo q=new QInfo();
+		q=qd.findQById(qid);
 		
 		
-		request.getSession().setAttribute("news", news);
+		request.getSession().setAttribute("q", q);
 		return "showDetail";
 	}
 }
