@@ -46,7 +46,8 @@
           <div class="container">
             <div class="d-flex">
               <a class="header-brand" href="./index.jsp">
-                <img src="./demo/brand/tabler.svg" class="header-brand-img" alt="tabler logo">
+              	<!-- logo图片 -->
+                <img src="./demo/brand/tabler.svg" class="header-brand-img" alt="ccipp logo">
               </a>
               <div class="d-flex order-lg-2 ml-auto">
                 <div class="dropdown d-none d-md-flex">
@@ -56,55 +57,62 @@
                 </div>
                 <div class="dropdown">
                   <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+                  	<!--  用户头像  #session.user.avator [当修改头像的时候 记住更新该属性值]-->
                     <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
                     <span class="ml-2 d-none d-lg-block">
-                                <span class="text-default"><s:property value="#session.user.username"/></span>
+                      <span class="text-default"><s:property value="#session.user.username"/></span>
                       <small class="text-muted d-block mt-1">
                        <s:if test="#session.user.role == 0">游客</s:if>
-                <s:elseif test="#session.user.role == 1">个人会员</s:elseif>
-                <s:elseif test="#session.user.role == 2">企业会员</s:elseif>
-                      <s:else>管理员</s:else>
-                      
-                      
+               		   <s:elseif test="#session.user.role == 1">个人会员</s:elseif>
+                       <s:elseif test="#session.user.role == 2">企业会员</s:elseif>
+                       <s:else>管理员</s:else>
                       </small>
                     </span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                      
-
-                    
+  					 <!--所有要获取信息的跳转 均需改成 s:url 进行跳转到action中  -->
+                    <!-- 游客功能条 -->
                     <s:if test="#session.user.role == 0">
                      <a class="dropdown-item" href="./register.jsp">
                       <i class="dropdown-icon fe fe-user"></i> 注册
                     </a>
-                </s:if>
-                    
+               		 </s:if>
+                    <!-- 用户功能条 -->
                     <s:elseif test="#session.user.role == 1">
+                    <!-- 需要获取用户信息然后跳转到 modifyInfo.jsp 需要使用s:url -->
                     <a class="dropdown-item" href="./modifyInfo.jsp">
                       <i class="dropdown-icon fe fe-user"></i> 设置
                     </a>
+                  
                     <a class="dropdown-item" href="./showMyMessage.jsp">
                       <i class="dropdown-icon fe fe-send"></i> 留言管理
                     </a>
-                    <a class="dropdown-item" href="./postQA.jsp">
-                      <i class="dropdown-icon fe fe-send"></i> 供求信息管理
+                    <a class="dropdown-item" href="./qInfoManage.jsp">
+                      <i class="dropdown-icon fe fe-send"></i> 供应信息管理
                     </a>
-          </s:elseif>
-                    
+                     <a class="dropdown-item" href="./aInfoManage.jsp">
+                      <i class="dropdown-icon fe fe-send"></i> 求购信息管理
+                    </a>
+          			</s:elseif>
+                    <!-- 管理员功能条 -->
                     <s:else >
                       <a class="dropdown-item" href="./modifyInfo.jsp">
                       <i class="dropdown-icon fe fe-user"></i> 设置
                     </a>
-                    <a class="dropdown-item" href="./showMyMessage.jsp">
+                    <a class="dropdown-item" href="./messageManage.jsp">
                       <i class="dropdown-icon fe fe-send"></i> 留言管理
                     </a>
-                    <a class="dropdown-item" href="./postQA.jsp">
-                      <i class="dropdown-icon fe fe-send"></i> 供求信息管理
+                    <a class="dropdown-item" href="./qInfoManage.jsp">
+                      <i class="dropdown-icon fe fe-send"></i> 供应信息管理
                     </a>
-                    <a class="dropdown-item" href="./postNews.jsp">
+                     <a class="dropdown-item" href="./aInfoManage.jsp">
+                      <i class="dropdown-icon fe fe-send"></i> 求购信息管理
+                    </a>
+                    <a class="dropdown-item" href="./newsInfoManage.jsp">
                       <i class="dropdown-icon fe fe-send"></i> 资讯信息管理
                     </a>
-                    <a class="dropdown-item" href="./postExhibit.jsp">
+                    <a class="dropdown-item" href="./exhibitInfoManage.jsp">
                       <i class="dropdown-icon fe fe-send"></i> 展会信息管理
                     </a>
                     </s:else>
@@ -113,14 +121,10 @@
                     <a class="dropdown-item" href="./login.jsp">
                       <i class="dropdown-icon fe fe-log-out"></i>退出
                     </a>
+                    
+                    
                   </div>
                 </div>
-                
-
-
-
-
-             
               </div>
               <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
                 <span class="header-toggler-icon"></span>
@@ -131,15 +135,8 @@
         <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-lg-3 ml-auto">
-                <form class="input-icon my-3 my-lg-0" action="???">
-                  <input type="search" class="form-control header-search" name="searchcontent"   placeholder="Search&hellip;" tabindex="1">
-                  <div class="input-icon-addon">
-                    <i class="fe fe-search"></i>
-                  </div>
-                </form>
-              </div>
               <div class="col-lg order-lg-first">
+               <!--所有要获取信息的跳转 均需改成 s:url 进行跳转到action中  -->
                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                   <li class="nav-item">
                     <a href="./index.jsp" class="nav-link"><i class="fe fe-home"></i>&nbsp;首页&nbsp;</a>
@@ -207,8 +204,8 @@
                           <img class="d-block w-100" alt="" src="./demo/photos/geran-de-klerk-290418-1500.jpg" data-holder-rendered="true">
                           <div class="carousel-item-background d-none d-md-block"></div>
                           <div class="carousel-caption d-none d-md-block">
-                            <h3>Slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h3>好啊</h3>
+                            <p>好可好！非常好</p>
                           </div>
                         </div>
                       </div>
@@ -226,28 +223,31 @@
               </div>
             </div>
           </div> 
-      <footer class="footer">
+     <footer class="footer">
         <div class="container">
           <div class="row align-items-center flex-row-reverse">
             <div class="col-auto ml-lg-auto">
               <div class="row align-items-center">
                 <div class="col-auto">
                   <ul class="list-inline list-inline-dots mb-0">
-                    <li class="list-inline-item"><a href="./docs/index.html">Documentation</a></li>
-                    <li class="list-inline-item"><a href="./faq.html">FAQ</a></li>
+                    <li class="list-inline-item">By</li>
+                    <li class="list-inline-item">王超群</li>
+                    <li class="list-inline-item">王金龙</li>
+                    <li class="list-inline-item">陈立德</li>
+                    <li class="list-inline-item">史金明</li>
+                    <li class="list-inline-item">孙利龙</li>
+                    <li class="list-inline-item">陈飞阳</li>
                   </ul>
-                </div>
-                <div class="col-auto">
-                  <a href="https://github.com/tabler/tabler" class="btn btn-outline-primary btn-sm">Source code</a>
                 </div>
               </div>
             </div>
             <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
-              Copyright © 2018 <a href=".">ccipp</a>.  All rights reserved.
+              Copyright © 2018 <a href="./index.jsp">ccipp</a>.  All rights reserved.
             </div>
           </div>
         </div>
       </footer>
     </div>
+   </div>
   </body>
 </html>
