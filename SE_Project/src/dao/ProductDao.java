@@ -10,8 +10,11 @@ import java.util.ArrayList;
 
 import java.util.List;
 
+
+
 import db.C3P0JdbcUtil;
-import entity.ProductInfo;;
+import entity.ProductInfo;
+import entity.MessageInfo;
 
 public class ProductDao {
 	public List<ProductInfo> findAllProduct() throws SQLException{
@@ -22,7 +25,7 @@ public class ProductDao {
 		ProductInfo product = null;
 		//conn=DBUtil.getConnection();
 		conn=C3P0JdbcUtil.getConnection();
-		String sql = "SELECT * FROM ProductInfo  order by pid desc";
+		String sql = "SELECT * FROM ProductInfo order by pid desc";
 		ps = conn.prepareStatement(sql);
 		rs=ps.executeQuery();
 		while(rs.next()) {
@@ -34,6 +37,36 @@ public class ProductDao {
 			product.setPintroduce(rs.getString("pintroduce"));
 			product.setPimage(rs.getString("pimage"));
 			list.add(product);
+		}	     
+		conn.close();
+		ps.close();
+		rs.close();
+		return list;
+	}
+	
+	public List<MessageInfo> getProductMessage(int pId) throws SQLException{
+		List<MessageInfo> list = new ArrayList<MessageInfo>();
+		Connection conn=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		MessageInfo message= null;
+		//conn=DBUtil.getConnection();
+		conn=C3P0JdbcUtil.getConnection();
+		String sql = "SELECT * FROM MessageInfo WHERE mobjid=? and mobjtype=4 order by pid desc";
+		ps = conn.prepareStatement(sql);
+		ps.setString(1, String.valueOf(pId));
+		rs=ps.executeQuery();
+		while(rs.next()) {
+			message = new MessageInfo();
+			message.setMid(rs.getInt("mid"));
+			message.setUid(rs.getInt("uid"));
+			message.setUsername(rs.getString("username"));
+			message.setMdate(rs.getString("mdata"));
+			message.setMcontent(rs.getString("mcontent"));
+			message.setMobjid(rs.getInt("mobjid"));
+			message.setMobjtitle(rs.getString("mobjtitle"));
+			message.setMobjtype(rs.getInt("mobjtype"));
+			list.add(message);
 		}	     
 		conn.close();
 		ps.close();
