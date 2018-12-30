@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -18,7 +18,7 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
     <!-- Generated: 2018-04-06 16:27:42 +0200 -->
-    <title>首页</title>
+    <title>咨询</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
     <script src="./assets/js/require.min.js"></script>
@@ -75,7 +75,6 @@
                     </a>
                   </div>
                 </div>
-              </div>
               <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
                 <span class="header-toggler-icon"></span>
               </a>
@@ -85,11 +84,11 @@
         <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
           <div class="container">
             <div class="row align-items-center">
-              
+             
               <div class="col-lg order-lg-first">
                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                   <li class="nav-item">
-                    <a href="./index.html" class="nav-link active"><i class="fe fe-home"></i>&nbsp;首页&nbsp;</a>
+                    <a href="./index.html" class="nav-link"><i class="fe fe-home"></i>&nbsp;首页&nbsp;</a>
                   </li>
                   <li class="nav-item">
                     <a href="./exhibitInfo.html" class="nav-link"><i class="fe fe-box"></i>&nbsp;展会&nbsp;</a>
@@ -111,42 +110,82 @@
             </div>
           </div>
         </div>
-        
-        <div class="my-3 my-md-6">
-          <div class="container">
+        <!-- HEAD END -->
+          <div class="my-3 my-md-5">
+            <div class="container">
+              <div class="page-header">
+                <h1 class="page-title">
+                  &nbsp;咨讯详情
+                </h1>
+              </div>
+            
             <div class="row">
-              <div class="col-md-3">
-                <h3 class="page-title mb-5">展会服务</h3>
-              </div>
-             
-             <div class="card">
+              <div class="col-lg-9">
                 <div class="card">
-                  <div class="card-header">
-                     <h3 class="card-title">编辑展会</h3>
-                   </div>
                   <div class="card-body">
-                  <form  action="#" method="post" enctype="multipart/form-data">
-                  <div class="form-group">
-                          <label class="form-label">展会标题</label>
-                          <input type="text" class="form-control" name="ntitle" placeholder="Title.." value="#xx.ntitle">
-                  </div>
-                  <div class="form-group">
-                      <label class="form-label">展会图片</label>    <!-- 没有选择则保持之前，需要添加判断决定是否更改 -->
-                      <div class="custom-file">
-                      <input type="file" class="custom-file-input" name="nimage">
-                      <label class="custom-file-label">选择图片</label>
+                     <div class="text-wrap p-lg-6">
+                        <a href="javascript:void(0)" class="mb-3">
+                          <img src="demo/photos/nathan-anderson-316188-500.jpg" alt="咨询图片" class="rounded">
+                        </a>
+                    </div>  
+                    <div class="text-wrap p-lg-6">
+                      <h2 class="mt-0 mb-4">标题</h2>
+                      <p>内容</p>
+                       <div>
+                         <div>发布人姓名</div>
+                        <small class="d-block text-muted">发布时间</small>
+                      </div>                 
+                      </div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                      <label class="form-label">展会内容</label>
-                      <textarea class="form-control" name="ncontent" rows="6" placeholder="Content.." value="#xx.ncontent">
-                      </textarea>
-                  </div>
-                  </form>
                 </div>
-              </div>
             </div>
-          </div> 
+          </div>
+          <!--添加留言-->
+          <div class="card-footer text-right">
+              <a href="addMessage.html">  <button class="btn btn-primary">添加留言</button> </a> 
+          </div>
+          <!-- 留言界面 -->
+                 <div class="card">
+                  <div class="card-body">
+                    <article class="media">
+                      <div class="media-body">
+                        <div class="content">
+                          <p class="h5">
+                            留言人姓名 <small class="float-right text-muted">留言时间</small>
+                          </p>
+                          <p>
+                            留言内容
+                          </p>
+                          </div>
+                          </div>
+                    </article>
+                  </div>
+                  </div>
+
+
+                  <div class="card">
+                   <div class="card-body">
+                    <article class="media">
+                     
+                      <div class="media-body">
+                        <div class="content">
+                          <p class="h5">
+                            留言人姓名 <small class="float-right text-muted">留言时间</small>
+                          </p>
+                          <p>
+                            留言内容
+                          </p>
+                          </div>
+                          </div>
+                    </article>
+                  </div>
+                  </div>
+
+
+
+
+                  </div>
+              </div>
       <footer class="footer">
         <div class="container">
           <div class="row align-items-center flex-row-reverse">
