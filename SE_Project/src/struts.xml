@@ -29,16 +29,25 @@
 
 		<!-- 供应的action -->
 		<action name="a_*" class="action.AInfoAction" method="{1}">
-			<result name="show">/AInfo.jsp</result>
-			<result name="showDetail">/showADetail.jsp</result>
+			<result name="falseadd">/addAInfo.jsp</result>
+			<result name="show">/aInfo.jsp</result>
+			<result name="showDetail">/aInfoDetail.jsp</result>
 			<result name="showMyA">/aInfoManage.jsp</result>
+			<result name="falseudate">/modifyAInfo.jsp</result>
+			<result name="falsemyudate">/modifyAInfo.jsp</result>
+			<result name="aManage">/aInfoManage.jsp</result>
+			<result name="modify">/modifyAInfo.jsp</result>
 		</action>
 
 		<!-- 求购的action -->
 		<action name="q_*" class="action.QInfoAction" method="{1}">
+			<result name="falseadd">/addQInfo.jsp</result>
 			<result name="show">/qInfo.jsp</result>
-			<result name="showDetail">/showqDetail.jsp</result>
+			<result name="showDetail">/qInfoDetail.jsp</result>
 			<result name="showMyQ">/qInfoManage.jsp</result>
+			<result name="falseudate">/modifyQInfo.jsp</result>
+			<result name="falsemyudate">/modifyQInfo.jsp</result>
+			<result name="modify">/modifyQInfo.jsp</result>
 		</action>
 
 		<!-- 展会的action -->
