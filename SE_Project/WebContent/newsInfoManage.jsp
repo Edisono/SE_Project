@@ -1,91 +1,72 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="Begin.jsp"%>
- <script type="text/javascript">
-document.getElementsByTagName("title")[0].innerText = '资讯管理';
-</script>
-            <!-- HEAD END -->
-            <div class="my-3 my-md-5">
-                <div class="container">
-                    <div class="page-header">
-                        <h1 class="page-title">
-                            &nbsp;咨讯管理
-                        </h1>
+           <!-- HEAD END -->
+         <div class="my-3 my-md-5">
+            <div class="container">
+              <div class="page-header">
+                <h1 class="page-title">
+                   &nbsp;资讯详情
+                </h1>
+              </div>
+            
+                <div class="row">
+              
+              <div class="col-lg-9">
+                <div class="card">
+                  <div class="card-body">
+                     <div class="text-wrap p-lg-6">
+                        <a href="javascript:void(0)" class="mb-3">
+                          <img src=<s:property value="%{#session.news.nimage}"/> alt="咨询图片" class="rounded">
+                        </a>
+                    </div>  
+                    <div class="text-wrap p-lg-6">
+                      <h2 class="mt-0 mb-4">标题：<s:property value="%{#session.news.ntitle}"/></h2>
+                      <p>主要内容：<s:property value="%{#session.news.ncontent}"/></p>
+                       <div>
+                         <div>发布人：<s:property value="%{#session.news.username}"/></div>
+                        <small class="d-block text-muted">资讯发布时间：<s:property value="%{#session.news.etime}"/></small>
+                      </div>                 
+                      </div>
                     </div>
-
-                    <div class="col-lg-12">
-                        <div class="card card-aside">
-                            <a href="#" class="card-aside-column" style="background-image: url(E:/图片/2.jpg)"></a>
-                            <div class="card-body d-flex flex-column">
-                                <h4><a href="#">标题</a></h4>
-                                <div class="d-flex align-items-center pt-5 mt-auto">
-                                    
-                                    <div>
-                                        <div>发布人姓名</div>
-                                        <small class="d-block text-muted">发布时间</small>
-                                    </div>
-                                    <div class="ml-auto text-muted">
-                                        <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i
-                                                class="fe fe-eye mr-1"></i> 100</a>
-                                        <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i
-                                                class="fe fe-heart mr-1"></i> 42</a>
-                                    </div>
-                                </div>
-                                <div class="ml-auto text-muted">
-                                    <a href="#" class="icon d-none d-md-inline-block ml-3">
-                                        <button class="btn btn-outline-primary btn-sm">
-                                            <span class="fe fe-edit-3"></span> 修改
-                                        </button>
-                                    </a>
-                                    <a href="#" class="icon d-none d-md-inline-block ml-3">
-                                        <button class="btn btn-outline-primary btn-sm">
-                                            <span class="fe fe-delete"></span> 删除
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="card card-aside">
-                            <a href="#" class="card-aside-column"
-                               style="background-image: url(demo/photos/aneta-ivanova-776-500.jpg)"></a>
-                            <div class="card-body d-flex flex-column">
-                                <h4><a href="#">标题</a></h4>
-
-                                <div class="d-flex align-items-center pt-5 mt-auto">
-                                   
-                                    <div>
-                                        <div>发布人姓名</div>
-                                        <small class="d-block text-muted">发布时间</small>
-                                    </div>
-                                    <div class="ml-auto text-muted">
-                                        <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i
-                                                class="fe fe-eye mr-1"></i> 100</a>
-                                        <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i
-                                                class="fe fe-heart mr-1"></i> 42</a>
-                                    </div>
-                                </div>
-                                <div class="ml-auto text-muted">
-                                    <a href="#" class="icon d-none d-md-inline-block ml-3">
-                                        <button class="btn btn-outline-primary btn-sm">
-                                            <span class="fe fe-edit-3"></span> 修改
-                                        </button>
-                                    </a>
-                                    <a href="#" class="icon d-none d-md-inline-block ml-3">
-                                        <button class="btn btn-outline-primary btn-sm">
-                                            <span class="fe fe-delete"></span> 删除
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                   
                 </div>
+
             </div>
+          </div>
+         
+         
+          <!--添加留言-->
+          <div class="card-footer text-right">
+              <a href="addMessage.html">  <button class="btn btn-primary">添加留言</button> </a> 
+          </div>
+          <!-- 留言界面 -->
+          <s:iterator value="#session.newsMessageList" var="xx" status="st"> 
+                 <div class="card">
+                  <div class="card-body">
+                    <article class="media">
+                      <div class="media-body">
+                        <div class="content">
+                          <p class="h5">
+                            留言人姓名:<s:property value="#xx.username"/>
+                             <small class="float-right text-muted">留言时间:<s:property value="#xx.mdate"/></small>
+                          </p>
+                          <p>
+                           <s:property value="#xx.mcontent"/>
+                          </p>
+                          </div>
+                          </div>
+                    </article>
+                  </div>
+                  </div>
+ </s:iterator>
+
+              
+
+
+
+
+                  </div>
+              </div>
 
      <%@include file="End.jsp"%>

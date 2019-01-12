@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="Begin.jsp"%>
- <script type="text/javascript">
-document.getElementsByTagName("title")[0].innerText = '资讯';
-</script>
         <!-- HEAD END -->
           <div class="my-3 my-md-5">
             <div class="container">
@@ -40,6 +37,13 @@ document.getElementsByTagName("title")[0].innerText = '资讯';
               </div>
 	</s:iterator>
 
+<!-- 需要添加判断，个人/游客不可见 -->
+              <s:if test="#session.user.role == 2">
+              <a href="addNewsInfo.jsp" class="btn btn-primary"><i class="fe fe-plus"></i> 发布新的资讯信息</a>
+              </s:if>
+              <s:elseif test="#session.user.role == 3">
+              <a href="addNewsInfo.jsp" class="btn btn-primary"><i class="fe fe-plus"></i> 发布新的资讯信息</a>
+              </s:elseif>
 
             </div>
           </div>

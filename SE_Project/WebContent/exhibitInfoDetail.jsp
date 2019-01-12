@@ -40,8 +40,9 @@
          
           <!--添加留言-->
           <div class="card-footer text-right">
-              <a href="addMessage.html">  <button class="btn btn-primary">添加留言</button> </a> 
+              <a href="addMessage.jsp">  <button class="btn btn-primary">添加留言</button> </a> 
           </div>
+          
           <!-- 留言界面 -->
           <s:iterator value="#session.exhibitMessageList" var="xx" status="st"> 
                  <div class="card">
@@ -64,7 +65,7 @@
  </s:iterator>
 
               
-
+ 
 
 
 

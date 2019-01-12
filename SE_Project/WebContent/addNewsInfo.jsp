@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="Begin.jsp"%>
-<script type="text/javascript">
-document.getElementsByTagName("title")[0].innerText = '资讯';
-</script>        
+        
         <div class="my-3 my-md-6">
           <div class="container">
             <div class="row">
@@ -17,7 +15,7 @@ document.getElementsByTagName("title")[0].innerText = '资讯';
                      <h3 class="card-title">编辑资讯</h3>
                    </div>
                   <div class="card-body">
-                  <form  action="#" method="post" enctype="multipart/form-data">
+                  <form  action="news_add" method="post" enctype="multipart/form-data">
                   <div class="form-group">
                           <label class="form-label">资讯标题</label>
                           <input type="text" class="form-control" name="ntitle" placeholder="Title..">
@@ -44,6 +42,4 @@ document.getElementsByTagName("title")[0].innerText = '资讯';
               </div>
             </div>
           </div> 
-          </div>
-          </div>
  <%@include file="End.jsp"%>
