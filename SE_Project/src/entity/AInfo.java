@@ -1,13 +1,15 @@
 package entity;
 
+import java.util.Date;
+
 public class AInfo {
 
 	private int aid;//供应id
 	private String atitle;//供应标题
 	private String acontent;//供应内容
-	private String adeadline;//截止日期
+	private Date adeadline;//截止日期
 	private String acompany;//供应企业
-	private int pid;// 产品id，对应ProductInfo中的pid
+	private String aname;// 产品id，对应ProductInfo中的pid
 	private String aimage;
 
 	public String getAimage() {
@@ -42,11 +44,11 @@ public class AInfo {
 		this.acontent = acontent;
 	}
 
-	public String getAdeadline() {
+	public Date getAdeadline() {
 		return adeadline;
 	}
 
-	public void setAdeadline(String adeadline) {
+	public void setAdeadline(Date adeadline) {
 		this.adeadline = adeadline;
 	}
 
@@ -58,12 +60,13 @@ public class AInfo {
 		this.acompany = acompany;
 	}
 
-	public int getPid() {
-		return pid;
+
+	public String getAname() {
+		return aname;
 	}
 
-	public void setPid(int pid) {
-		this.pid = pid;
+	public void setAname(String aname) {
+		this.aname = aname;
 	}
 	
 }

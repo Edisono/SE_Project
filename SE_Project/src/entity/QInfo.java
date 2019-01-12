@@ -1,13 +1,15 @@
 package entity;
 
+import java.util.Date;
+
 public class QInfo {
 
-	private int qid;//求购id
-	private String qtitle;//求购标题
-	private int uid;//发布人id，对应UserInfo中的uid
-	private String username;//发布人昵称
-	private String qcontent;//求购内容
-	private String qdate;// 求购期望时间
+	private int qid;//姹傝喘id
+	private String qtitle;//姹傝喘鏍囬
+	private int uid;//鍙戝竷浜篿d锛屽搴擴serInfo涓殑uid
+	private String username;//鍙戝竷浜烘樀绉�
+	private String qcontent;//姹傝喘鍐呭
+	private Date qdate;// 姹傝喘鏈熸湜鏃堕棿
 	private String qimage;
 
 	public String getQimage() {
@@ -58,11 +60,11 @@ public class QInfo {
 		this.qcontent = qcontent;
 	}
 
-	public String getQdate() {
+	public Date getQdate() {
 		return qdate;
 	}
 
-	public void setQdate(String qdate) {
+	public void setQdate(Date qdate) {
 		this.qdate = qdate;
 	}
 }
