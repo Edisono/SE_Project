@@ -246,5 +246,15 @@ public class ExhibitDao {
 		return true;
 	}
 	
-	
+	public int getMaxId() throws SQLException{
+		Connection conn=C3P0JdbcUtil.getConnection();
+		String sql = "select max(eid) from ExhibitInfo";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ResultSet rs=ps.executeQuery();
+		int max=0;
+		if(rs.next())
+			max=rs.getInt("max(eid)");
+		
+		return max+1;
+	}
 }
