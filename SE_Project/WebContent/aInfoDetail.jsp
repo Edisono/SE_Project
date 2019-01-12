@@ -19,7 +19,7 @@ document.getElementsByTagName("title")[0].innerText = '供应详情';
 					<div class="card-body">
 						<div class="text-wrap p-lg-6">
                         <a href=" " class="mb-3">
-                          <img src="<s:property value="%{#session.q.qimage}"/>" alt="咨询图片" class="rounded">
+                          <img src="<s:property value="%{#session.a.aimage}"/>" alt="咨询图片" class="rounded">
                         </a>
                     </div> 
 						<div class="text-wrap p-lg-6">
