@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 import java.util.List;
 
 import db.C3P0JdbcUtil;
@@ -219,6 +218,8 @@ public class NewsDao {
 	}
 
 	public List<MessageInfo> getNewsMessage(int nId) throws SQLException {
+
+		
 		List<MessageInfo> list = new ArrayList<MessageInfo>();
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -236,7 +237,7 @@ public class NewsDao {
 			message.setMid(rs.getInt("mid"));
 			message.setUid(rs.getInt("uid"));
 			message.setUsername(rs.getString("username"));
-			message.setMdate(rs.getString("mdata"));
+			message.setMdate(rs.getString("mdate"));
 			message.setMcontent(rs.getString("mcontent"));
 			message.setMobjid(rs.getInt("mobjid"));
 			message.setMobjtitle(rs.getString("mobjtitle"));
@@ -246,5 +247,18 @@ public class NewsDao {
 		conn.close();
 
 		return list;
+	}
+
+
+	public int getMaxId() throws SQLException{
+		Connection conn=C3P0JdbcUtil.getConnection();
+		String sql = "select max(nid) from newsInfo";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ResultSet rs=ps.executeQuery();
+		int max=0;
+		if(rs.next())
+			max=rs.getInt("max(nid)");
+		
+		return max+1;
 	}
 }
