@@ -71,6 +71,7 @@
                   </a>
                   <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                      
+                     
   					 <!--所有要获取信息的跳转 均需改成 s:url 进行跳转到action中  -->
                     <!-- 游客功能条 -->
                     <s:if test="#session.user.role == 0">
