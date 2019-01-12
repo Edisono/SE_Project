@@ -59,7 +59,7 @@ document.getElementsByTagName("title")[0].innerText = '编辑个人信息';
                     <div class="col-md-12">
                       <div class="form-group mb-0">
                         <label class="form-label">个人简介</label>
-                        <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike"></textarea>
+                        <textarea name="profile" rows="5" class="form-control" placeholder="Here can be your description" value="Mike"></textarea>
                       </div>
                     </div>
                   </div>
