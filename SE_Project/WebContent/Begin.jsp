@@ -86,14 +86,14 @@
                       <i class="dropdown-icon fe fe-user"></i> 设置
                     </a>
                   
-                    <a class="dropdown-item" href="message_showMyMessage.action">
+                    <a class="dropdown-item" href="message_show.action">
                       <i class="dropdown-icon fe fe-send"></i> 留言管理
                     </a>
-                    <a class="dropdown-item" href="q_showMyQ.action">
+                    <a class="dropdown-item" href="q_show.action">
                     <!-- 看自己的Q么-->
                       <i class="dropdown-icon fe fe-send"></i> 供应信息管理
                     </a>
-                     <a class="dropdown-item" href="a_showMyA.action">
+                     <a class="dropdown-item" href="a_show.action">
                       <i class="dropdown-icon fe fe-send"></i> 求购信息管理
                     </a>
           			</s:elseif>
