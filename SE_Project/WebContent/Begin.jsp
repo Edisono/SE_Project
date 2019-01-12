@@ -58,7 +58,7 @@
 <div class="dropdown">
                   <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
                   	
-                    <span class="avatar" style="background-image: url(#session.user.avator)"></span>
+                    <span class="avatar" style="background-image: url(<s:property value="#session.user.avator"/>)"></span>
                     <span class="ml-2 d-none d-lg-block">
                       <span class="text-default"><s:property value="#session.user.username"/></span>
                       <small class="text-muted d-block mt-1">

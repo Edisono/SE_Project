@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="Begin.jsp"%>
+<script type="text/javascript">
+document.getElementsByTagName("title")[0].innerText = '展会';
+</script>
         <!-- HEAD END -->
           <div class="my-3 my-md-5">
             <div class="container">
@@ -27,7 +30,7 @@
                         <small class="d-block text-muted">展会时间：<s:property value="#xx.etime"/></small>
                       </div>
                       <div class="ml-auto text-muted">
-                        <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-eye mr-1"></i> <%=(int)(Math.random()*100) %></a>
+                        <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-eye mr-1"></i>1</a>
                         <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-heart mr-1"></i> 0</a>
                       </div>
                     </div>

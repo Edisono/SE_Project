@@ -123,7 +123,7 @@ public class RegisterAction extends ActionSupport {
 	public String execute() throws Exception {
 	String realPath = ServletActionContext.getServletContext().getRealPath("/demo/avator");
 	File file = new File(realPath);
-	//»ñÈ¡ÎÄ¼þÄ©Î² eg£º.jpg
+	//ï¿½ï¿½È¡ï¿½Ä¼ï¿½Ä©Î² egï¿½ï¿½.jpg
 	String fileend = avatorFileName.substring(avatorFileName.lastIndexOf('.'), avatorFileName.length());
 	if(!file.exists()) file.mkdirs();
 	try {
@@ -137,7 +137,7 @@ public class RegisterAction extends ActionSupport {
     user.setPassword(password);
     user.setPhone(phone);
     user.setProfile(profile);
-    user.setAvator("/demo/avator/"+email+fileend);
+    user.setAvator("./demo/avator/"+email+fileend);
     user.setQQ(QQ);
     user.setUsername(username);
     user.setRole(1);

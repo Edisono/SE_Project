@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="Begin.jsp"%>
-        
+<script type="text/javascript">
+document.getElementsByTagName("title")[0].innerText = '修改展会';
+</script>        
         <div class="my-3 my-md-6">
           <div class="container">
             <div class="row">
