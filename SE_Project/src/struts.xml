@@ -49,7 +49,14 @@
 			<result name="3">/showproduct3.jsp</result>
 			<result name="4">/showproduct4.jsp</result>
 		</action>
-				
+			
+		<!-- 用户的action -->
+		<action name="user_*" class="action.UserAction"
+			method="{1}">
+			<result name="modify">/modifyInfo.jsp</result>
+			<result name="showDetail">/showexhibitDetail.jsp</result>
+		</action>	
+		
 		<!-- 留言的action -->
 		<action name="message_*" class="action.MessageAction" method="{1}">
 			<result name="showNews" type="chain">news_showDetail</result>

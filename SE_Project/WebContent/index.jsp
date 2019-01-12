@@ -80,38 +80,38 @@
                		 </s:if>
                     <!-- 用户功能条 -->
                     <s:elseif test="#session.user.role == 1">
-                    <a class="dropdown-item" href="./modifyInfo.jsp">
+                    <a class="dropdown-item" href="user_modify.action">
                       <i class="dropdown-icon fe fe-user"></i> 设置
                     </a>
                   
-                    <a class="dropdown-item" href="./showMyMessage.jsp">
+                    <a class="dropdown-item" href="user_message.action">
                       <i class="dropdown-icon fe fe-send"></i> 留言管理
                     </a>
-                    <a class="dropdown-item" href="./qInfoManage.jsp">
+                    <a class="dropdown-item" href="user_q.action">
                       <i class="dropdown-icon fe fe-send"></i> 供应信息管理
                     </a>
-                     <a class="dropdown-item" href="./aInfoManage.jsp">
+                     <a class="dropdown-item" href="user_a.action">
                       <i class="dropdown-icon fe fe-send"></i> 求购信息管理
                     </a>
           			</s:elseif>
                     <!-- 管理员功能条 -->
                     <s:else >
-                      <a class="dropdown-item" href="./modifyInfo.jsp">
+                      <a class="dropdown-item" href="user_modify.action">
                       <i class="dropdown-icon fe fe-user"></i> 设置
                     </a>
-                    <a class="dropdown-item" href="./messageManage.jsp">
+                    <a class="dropdown-item" href="user_message.action">
                       <i class="dropdown-icon fe fe-send"></i> 留言管理
                     </a>
-                    <a class="dropdown-item" href="./qInfoManage.jsp">
+                    <a class="dropdown-item" href="user_q.action">
                       <i class="dropdown-icon fe fe-send"></i> 供应信息管理
                     </a>
-                     <a class="dropdown-item" href="./aInfoManage.jsp">
+                     <a class="dropdown-item" href="user_a.action">
                       <i class="dropdown-icon fe fe-send"></i> 求购信息管理
                     </a>
-                    <a class="dropdown-item" href="./newsInfoManage.jsp">
+                    <a class="dropdown-item" href="user_news.action">
                       <i class="dropdown-icon fe fe-send"></i> 资讯信息管理
                     </a>
-                    <a class="dropdown-item" href="./exhibitInfoManage.jsp">
+                    <a class="dropdown-item" href="user_exhibit.action">
                       <i class="dropdown-icon fe fe-send"></i> 展会信息管理
                     </a>
                     </s:else>
@@ -141,19 +141,19 @@
                     <a href="./index.jsp" class="nav-link"><i class="fe fe-home"></i>&nbsp;首页&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./exhibit_show.action" class="nav-link"><i class="fe fe-box"></i>&nbsp;展会&nbsp;</a>
+                    <a href="exhibit_show.action" class="nav-link"><i class="fe fe-box"></i>&nbsp;展会&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                     <a href="./news_show.action" class="nav-link"><i class="fe fe-calendar"></i>&nbsp;咨询&nbsp;</a>
+                     <a href="news_show.action" class="nav-link"><i class="fe fe-calendar"></i>&nbsp;咨询&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./a_show.action" class="nav-link active"><i class="fe fe-file"></i>&nbsp;求购&nbsp;</a>
+                    <a href="a_show.action" class="nav-link active"><i class="fe fe-file"></i>&nbsp;求购&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./q_show.action" class="nav-link"><i class="fe fe-check-square"></i>&nbsp;供应&nbsp;</a>
+                    <a href="q_show.action" class="nav-link"><i class="fe fe-check-square"></i>&nbsp;供应&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./product_show.action" class="nav-link"><i class="fe fe-image"></i>&nbsp;产品</a>
+                    <a href="product_show.action" class="nav-link"><i class="fe fe-image"></i>&nbsp;产品</a>
                   </li>
                 </ul>
               </div>
