@@ -28,8 +28,8 @@ public class ADao {
 			a.setAid(rs.getInt("aid"));
 			a.setAtitle(rs.getString("atitle"));
 			a.setAcontent(rs.getString("acontent"));
-			a.setAdeadline(rs.getString("adeadline"));
-			a.setPid(rs.getInt("pid"));
+			a.setAdeadline(rs.getDate("adeadline"));
+			a.setAname(rs.getString("aname"));
 			a.setAcompany(rs.getString("acompany"));
 			a.setAimage(rs.getString("aimage"));
 			list.add(a);
@@ -87,8 +87,8 @@ public class ADao {
 			a.setAid(rs.getInt("aid"));
 			a.setAtitle(rs.getString("atitle"));
 			a.setAcontent(rs.getString("acontent"));
-			a.setAdeadline(rs.getString("adeadline"));
-			a.setPid(rs.getInt("pid"));
+			a.setAdeadline(rs.getDate("adeadline"));
+			a.setAname(rs.getString("aname"));
 			a.setAcompany(rs.getString("acompany"));
 			a.setAimage(rs.getString("aimage"));
 			list.add(a);
@@ -116,8 +116,8 @@ public class ADao {
 			a.setAid(rs.getInt("aid"));
 			a.setAtitle(rs.getString("atitle"));
 			a.setAcontent(rs.getString("acontent"));
-			a.setAdeadline(rs.getString("adeadline"));
-			a.setPid(rs.getInt("pid"));
+			a.setAdeadline(rs.getDate("adeadline"));
+			a.setAname(rs.getString("aname"));
 			a.setAcompany(rs.getString("acompany"));
 			a.setAimage(rs.getString("aimage"));
 			list.add(a);
@@ -145,8 +145,8 @@ public class ADao {
 			a.setAid(rs.getInt("aid"));
 			a.setAtitle(rs.getString("atitle"));
 			a.setAcontent(rs.getString("acontent"));
-			a.setAdeadline(rs.getString("adeadline"));
-			a.setPid(rs.getInt("pid"));
+			a.setAdeadline(rs.getDate("adeadline"));
+			a.setAname(rs.getString("aname"));
 			a.setAcompany(rs.getString("acompany"));
 			a.setAimage(rs.getString("aimage"));
 			list.add(a);
@@ -164,7 +164,7 @@ public class ADao {
 		AInfo a = null;
 		//conn=DBUtil.getConnection();
 		conn=C3P0JdbcUtil.getConnection();
-		String sql = "SELECT * FROM AInfo WHERE qid=?";
+		String sql = "SELECT * FROM AInfo WHERE aid=?";
 		ps = conn.prepareStatement(sql);
 		ps.setInt(1, aid);
 		rs=ps.executeQuery();
@@ -173,8 +173,8 @@ public class ADao {
 			a.setAid(rs.getInt("aid"));
 			a.setAtitle(rs.getString("atitle"));
 			a.setAcontent(rs.getString("acontent"));
-			a.setAdeadline(rs.getString("adeadline"));
-			a.setPid(rs.getInt("pid"));
+			a.setAdeadline(rs.getDate("adeadline"));
+			a.setAname(rs.getString("aname"));
 			a.setAcompany(rs.getString("acompany"));
 			a.setAimage(rs.getString("aimage"));
 		}	     
@@ -189,20 +189,18 @@ public class ADao {
 		PreparedStatement ps=null;
 		//conn=DBUtil.getConnection();
 		conn=C3P0JdbcUtil.getConnection();
-		String sql = "insert into AInfo(atitle,acontent,adeadline,pid,acompany,aimage) values(?,?,?,?,?,?)";
+		String sql = "insert into AInfo(atitle,acontent,adeadline,aname,acompany,aimage) values(?,?,?,?,?,?)";
 		ps = conn.prepareStatement(sql);
 		ps.setString(1, a.getAtitle());
 		ps.setString(2, a.getAcontent());
-		ps.setString(3, a.getAdeadline());
-		ps.setInt(4, a.getPid());
+		java.sql.Date sqlDate = new java.sql.Date(a.getAdeadline().getTime());
+		ps.setDate(3, sqlDate);
+		ps.setString(4, a.getAname());
 		ps.setString(5, a.getAcompany());
 		ps.setString(6, a.getAimage());
-		int flag = ps.executeUpdate();
+		ps.executeUpdate();
 		conn.close();
 		ps.close();
-		if (flag == 0) {
-			return false;
-		}
 		return true;
 	}
 	
@@ -214,12 +212,9 @@ public class ADao {
 		String sql = "delete from AInfo where aid=?";
 		ps = conn.prepareStatement(sql);
 		ps.setInt(1, aid);
-		int flag = ps.executeUpdate();
+		ps.executeUpdate();
 		conn.close();
 		ps.close();
-		if (flag == 0) {
-			return false;
-		}
 		return true;
 	}
 	
@@ -228,20 +223,34 @@ public class ADao {
 		PreparedStatement ps=null;
 		//conn=DBUtil.getConnection();
 		conn=C3P0JdbcUtil.getConnection();
-		String sql = "UPDATE AInfo SET atitle=?, acontent=?, adeadline=? ,pid=?, aimage=? WHERE aid=?";
+		String sql = "UPDATE AInfo SET atitle=?, acontent=?WHERE aid=?";
 		ps = conn.prepareStatement(sql);
 		ps.setString(1, a.getAtitle());
 		ps.setString(2, a.getAcontent());
-		ps.setString(3, a.getAdeadline());
-		ps.setInt(4, a.getPid());
-		ps.setString(5, a.getAimage());
-		ps.setInt(6, a.getAid());
-		int flag = ps.executeUpdate();
+		ps.setInt(3, a.getAid());
+		ps.executeUpdate();
 		conn.close();
 		ps.close();
-		if (flag == 0) {
-			return false;
-		}
 		return true;
 	}
+	
+	public int getMaxId() throws SQLException{
+		Connection conn=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		int x = 0;
+		//conn=DBUtil.getConnection();
+		conn=C3P0JdbcUtil.getConnection();
+		String sql = "SELECT MAX(aid) as MAX FROM AInfo";
+		ps = conn.prepareStatement(sql);
+		rs=ps.executeQuery();
+		while(rs.next()) {
+			x=rs.getInt("MAX");
+		}	     
+		conn.close();
+		ps.close();
+		return x;
+	}
+	
+	
 }

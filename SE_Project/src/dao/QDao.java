@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import db.C3P0JdbcUtil;
-import entity.QInfo;
+import entity.QInfo;;
 
 public class QDao {
 	public List<QInfo> findAllQ() throws SQLException{
@@ -27,7 +28,7 @@ public class QDao {
 			q.setQid(rs.getInt("qid"));
 			q.setQtitle(rs.getString("qtitle"));
 			q.setQcontent(rs.getString("qcontent"));
-			q.setQdate(rs.getString("qdate"));
+			q.setQdate(rs.getDate("qdate"));
 			q.setUid(rs.getInt("uid"));
 			q.setUsername(rs.getString("username"));
 			q.setQimage(rs.getString("qimage"));
@@ -56,7 +57,7 @@ public class QDao {
 			q.setQid(rs.getInt("qid"));
 			q.setQtitle(rs.getString("qtitle"));
 			q.setQcontent(rs.getString("qcontent"));
-			q.setQdate(rs.getString("qdate"));
+			q.setQdate(rs.getDate("qdate"));
 			q.setUid(rs.getInt("uid"));
 			q.setUsername(rs.getString("username"));
 			q.setQimage(rs.getString("qimage"));
@@ -85,7 +86,7 @@ public class QDao {
 			q.setQid(rs.getInt("qid"));
 			q.setQtitle(rs.getString("qtitle"));
 			q.setQcontent(rs.getString("qcontent"));
-			q.setQdate(rs.getString("qdate"));
+			q.setQdate(rs.getDate("qdate"));
 			q.setUid(rs.getInt("uid"));
 			q.setUsername(rs.getString("username"));
 			q.setQimage(rs.getString("qimage"));
@@ -114,7 +115,7 @@ public class QDao {
 			q.setQid(rs.getInt("qid"));
 			q.setQtitle(rs.getString("qtitle"));
 			q.setQcontent(rs.getString("qcontent"));
-			q.setQdate(rs.getString("qdate"));
+			q.setQdate(rs.getDate("qdate"));
 			q.setUid(rs.getInt("uid"));
 			q.setUsername(rs.getString("username"));
 			q.setQimage(rs.getString("qimage"));
@@ -142,7 +143,7 @@ public class QDao {
 			q.setQid(rs.getInt("qid"));
 			q.setQtitle(rs.getString("qtitle"));
 			q.setQcontent(rs.getString("qcontent"));
-			q.setQdate(rs.getString("qdate"));
+			q.setQdate(rs.getDate("qdate"));
 			q.setUid(rs.getInt("uid"));
 			q.setUsername(rs.getString("username"));
 			q.setQimage(rs.getString("qimage"));
@@ -200,9 +201,9 @@ public class QDao {
 		ps = conn.prepareStatement(sql);
 		ps.setString(1, q.getQtitle());
 		ps.setString(2, q.getQcontent());
-		ps.setInt(3, q.getUid());
+		ps.setDate(3, (Date) q.getQdate());
 		ps.setString(4, q.getQimage());
-		ps.setString(5, q.getUsername());
+		ps.setInt(5, q.getQid());
 		int flag = ps.executeUpdate();
 		conn.close();
 		ps.close();
@@ -211,6 +212,25 @@ public class QDao {
 		}
 		return true;
 	}
+	
+	public int getMaxId() throws SQLException{
+		Connection conn=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		int x = 0;
+		//conn=DBUtil.getConnection();
+		conn=C3P0JdbcUtil.getConnection();
+		String sql = "SELECT MAX(qid) as MAX FROM QInfo";
+		ps = conn.prepareStatement(sql);
+		rs=ps.executeQuery();
+		while(rs.next()) {
+			x=rs.getInt("MAX");
+		}	     
+		conn.close();
+		ps.close();
+		return x;
+	}
+	
 	
 	
 }
