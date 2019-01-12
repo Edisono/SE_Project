@@ -29,9 +29,7 @@
                   </div>
                   <div class="form-group">
                       <label class="form-label">求购内容</label>
-                      <textarea class="form-control" name="acontent" rows="6" placeholder="Content..">
-                      	<s:property value="%{#session.a.acontent}" />
-                      </textarea>
+                      <textarea class="form-control" name="acontent" rows="6" placeholder="Content.."><s:property value="%{#session.a.acontent}" /></textarea>
                   </div>
                   <div class="float-right">
 								<button type="submit" class="btn btn-primary btn-space">提交</button>
