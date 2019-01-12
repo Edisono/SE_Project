@@ -37,7 +37,7 @@
 		<action name="exhibit_*" class="action.ExhibitInfoAction"
 			method="{1}">
 			<result name="show">/exhibitInfo.jsp</result>
-			<result name="showDetail">/showexhibitDetail.jsp</result>
+			<result name="showDetail">/exhibitInfoDetail.jsp</result>
 		</action>
 		<!-- 留言的action -->
 		<action name="message_*" class="action.MessageAction" method="{1}">
