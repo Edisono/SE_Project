@@ -152,7 +152,7 @@
                     <a href="q_show.action" class="nav-link"><i class="fe fe-check-square"></i>&nbsp;供应&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./product_show.action" class="nav-link"><i class="fe fe-image"></i>&nbsp;产品</a>
+                    <a href="product_show.action" class="nav-link"><i class="fe fe-image"></i>&nbsp;产品</a>
                   </li>
                 </ul>
               </div>
