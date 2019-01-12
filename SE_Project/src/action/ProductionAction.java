@@ -2,15 +2,13 @@ package action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.struts2.ServletActionContext;
 
 import dao.ProductDao;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import entity.ProductInfo;
+import entity.MessageInfo;
 import entity.ProductInfo;
 
 public class ProductionAction extends ActionSupport {
@@ -28,6 +26,7 @@ public class ProductionAction extends ActionSupport {
 	private String pimage;
 	private int puserid;
 	private String pusername;
+	private String searchcontent;
 
 	public int getPid() {
 		return pid;
@@ -93,6 +92,14 @@ public class ProductionAction extends ActionSupport {
 		this.pusername = pusername;
 	}
 
+	public String getSearchcontent() {
+		return searchcontent;
+	}
+
+	public void setSearchcontent(String searchcontent) {
+		this.searchcontent = searchcontent;
+	}
+
 	public String showScience() throws SQLException {
 		ArrayList<ProductInfo> ProductList = new ArrayList<ProductInfo>();
 		String ptype = "科技";
@@ -127,17 +134,18 @@ public class ProductionAction extends ActionSupport {
 
 	public String search() throws SQLException {
 		ArrayList<ProductInfo> ProductList = new ArrayList<ProductInfo>();
-		String name = null;
-		ProductList = (ArrayList<ProductInfo>) pd.findProductLikeName(name);
+		ProductList = (ArrayList<ProductInfo>) pd.findProductLikeName(searchcontent);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductList", ProductList);
 		return "search";
 	}
 
 	public String showDetail() throws SQLException {
 		ProductInfo ProductDetail = new ProductInfo();
-		int pid = 0;
 		ProductDetail = (ProductInfo) pd.findProductById(pid);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductDetail", ProductDetail);
+		MessageInfo ProductMessage = new MessageInfo();
+		ProductMessage = (MessageInfo) pd.getProductMessage(pid);
+		ServletActionContext.getRequest().getSession().setAttribute("ProductMessage", ProductMessage);
 		return "showDetail";
 	}
 
