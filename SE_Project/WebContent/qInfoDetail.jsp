@@ -46,9 +46,8 @@ document.getElementsByTagName("title")[0].innerText = '求购详情';
 		</div>
 		<!--添加留言-->
 		<div class="card-footer text-right">
-			<a href="addMessage.jsp">
-				<button class="btn btn-primary">添加留言</button>
-			</a>
+			<s:if test="#session.user.getRole()==0"></s:if>
+          <s:else> <a href="addMessage.jsp">  <button class="btn btn-primary">添加留言</button> </a> </s:else>
 		</div>
 		<!-- 留言界面 -->
 

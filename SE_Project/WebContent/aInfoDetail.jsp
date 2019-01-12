@@ -19,7 +19,7 @@ document.getElementsByTagName("title")[0].innerText = '供应详情';
 					<div class="card-body">
 						<div class="text-wrap p-lg-6">
                         <a href=" " class="mb-3">
-                          <img src="<s:property value="%{#session.q.qimage}"/>" alt="咨询图片" class="rounded">
+                          <img src="<s:property value="%{#session.a.aimage}"/>" alt="咨询图片" class="rounded">
                         </a>
                     </div> 
 						<div class="text-wrap p-lg-6">
@@ -43,9 +43,8 @@ document.getElementsByTagName("title")[0].innerText = '供应详情';
 		</div>
 		<!--添加留言-->
 		<div class="card-footer text-right">
-			<a href="addMessage.jsp">
-				<button class="btn btn-primary">添加留言</button>
-			</a>
+			<s:if test="#session.user.getRole()==0"></s:if>
+          <s:else> <a href="addMessage.jsp">  <button class="btn btn-primary">添加留言</button> </a> </s:else>
 		</div>
 		<!-- 留言界面 -->
 

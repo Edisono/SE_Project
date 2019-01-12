@@ -38,8 +38,8 @@ document.getElementsByTagName("title")[0].innerText = '资讯详情';
           </div>
           <!--添加留言-->
           <div class="card-footer text-right">
-          <s:if test="#session.user.getRole()!='0'.toString()"></s:if>
-          <s:else> <a href="addMessage.html">  <button class="btn btn-primary">添加留言</button> </a> </s:else>
+          <s:if test="#session.user.getRole()==0"></s:if>
+          <s:else> <a href="addMessage.jsp">  <button class="btn btn-primary">添加留言</button> </a> </s:else>
              
           </div>
           
