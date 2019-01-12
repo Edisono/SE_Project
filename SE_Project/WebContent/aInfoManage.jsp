@@ -1,12 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="Begin.jsp"%>
+<script type="text/javascript">
+document.getElementsByTagName("title")[0].innerText = '供应管理';
+</script>
 
 <!-- HEAD END -->
 <div class="my-3 my-md-5">
 	<div class="container">
 		<div class="page-header">
-			<h1 class="page-title">&nbsp;求购管理</h1>
+			<h1 class="page-title">&nbsp;供应管理</h1>
 		</div>
 
 
