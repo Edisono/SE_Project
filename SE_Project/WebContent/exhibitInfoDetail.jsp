@@ -150,44 +150,25 @@
               <a href="addMessage.html">  <button class="btn btn-primary">添加留言</button> </a> 
           </div>
           <!-- 留言界面 -->
+          <s:iterator value="#session.exhibitMessageList" var="xx" status="st"> 
                  <div class="card">
                   <div class="card-body">
                     <article class="media">
                       <div class="media-body">
                         <div class="content">
                           <p class="h5">
-                            留言人姓名 <small class="float-right text-muted">留言时间</small>
+                            留言人姓名:<s:property value="#xx.username"/>
+                             <small class="float-right text-muted">留言时间:<s:property value="#xx.mdate"/></small>
                           </p>
                           <p>
-                            留言内容
+                           <s:property value="#xx.mcontent"/>
                           </p>
                           </div>
                           </div>
                     </article>
                   </div>
                   </div>
-
-
-                  <div class="card">
-                   <div class="card-body">
-                    <article class="media">
-                     
-                      <div class="media-body">
-                        <div class="content">
-                          <p class="h5">
-                            留言人姓名 <small class="float-right text-muted">留言时间</small>
-                          </p>
-                          <p>
-                            留言内容
-                          </p>
-                          </div>
-                          </div>
-                    </article>
-                  </div>
-                  </div>
-
-
-
+       </s:iterator>      
 
                   </div>
               </div>

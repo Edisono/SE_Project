@@ -1,6 +1,9 @@
 package action;
 
+import java.sql.SQLException;
+
 import dao.NewsDao;
+import dao.ProductDao;
 
 public class ProductAction {
 
