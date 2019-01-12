@@ -92,10 +92,10 @@
                     </a>
                     <a class="dropdown-item" href="q_show.action">
                     <!-- 看自己的Q么-->
-                      <i class="dropdown-icon fe fe-send"></i> 供应信息管理
+                      <i class="dropdown-icon fe fe-send"></i> 求购信息管理
                     </a>
                      <a class="dropdown-item" href="a_show.action">
-                      <i class="dropdown-icon fe fe-send"></i> 求购信息管理
+                      <i class="dropdown-icon fe fe-send"></i> 供应信息管理
                     </a>
           			</s:elseif>
                     <!-- 管理员功能条 -->
@@ -107,10 +107,10 @@
                       <i class="dropdown-icon fe fe-send"></i> 留言管理
                     </a>
                     <a class="dropdown-item" href="q_show.action">
-                      <i class="dropdown-icon fe fe-send"></i> 供应信息管理
+                      <i class="dropdown-icon fe fe-send"></i> 求购信息管理
                     </a>
                      <a class="dropdown-item" href="a_show.action">
-                      <i class="dropdown-icon fe fe-send"></i> 求购信息管理
+                      <i class="dropdown-icon fe fe-send"></i> 供应信息管理
                     </a>
                     <a class="dropdown-item" href="news_show.action">
                       <i class="dropdown-icon fe fe-send"></i> 资讯信息管理

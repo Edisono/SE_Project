@@ -54,7 +54,7 @@
 
 
               <div class="page-header">
-                <a href="./addqInfo.html" class="btn btn-primary"><i class="fe fe-plus"></i> 发布新的求购信息</a>
+                <a href="./addqInfo.jsp" class="btn btn-primary"><i class="fe fe-plus"></i> 发布新的求购信息</a>
               </div>
           
             </div>
