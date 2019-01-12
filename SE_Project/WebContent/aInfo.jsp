@@ -166,7 +166,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> 
               
               <div class="page-header">
                 <a href="./addAInfo.html" class="btn btn-primary"><i class="fe fe-plus"></i> 发布新的供应信息</a>
