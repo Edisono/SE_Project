@@ -64,4 +64,15 @@ public class ExhibitInfoAction {
 		request.getSession().setAttribute("exhibit", exhibit);
 		return "showDetail";
 	}
+	
+	public String manage() throws SQLException{
+		
+		ArrayList<ExhibitInfo> exhibitList=new ArrayList<ExhibitInfo>();
+		exhibitList=(ArrayList<ExhibitInfo>) ed.findAllExhibit();
+		
+		ServletActionContext.getRequest().getSession().setAttribute("exhibitList", exhibitList);
+		
+		return "manage";
+	}
+	
 }

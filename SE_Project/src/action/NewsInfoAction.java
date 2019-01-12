@@ -56,5 +56,15 @@ public class NewsInfoAction extends ActionSupport {
 		return "showDetail";
 	}
 	
+	public String manage() throws SQLException{
+		
+		ArrayList<NewsInfo> newsList=new ArrayList<NewsInfo>();
+		newsList=(ArrayList<NewsInfo>) nd.findAllNews();
+		
+		ServletActionContext.getRequest().getSession().setAttribute("newsList", newsList);
+		
+		return "manage";
+	}
+	
 	
 }

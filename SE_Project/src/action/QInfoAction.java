@@ -63,4 +63,12 @@ public class QInfoAction {
 		request.getSession().setAttribute("q", q);
 		return "showDetail";
 	}
+	
+	public String showMyQ() throws SQLException{
+		HttpServletRequest request = ServletActionContext.getRequest();
+		UserInfo user = (UserInfo)request.getSession().getAttribute("user");
+		List<QInfo> q = qd.findQByUid(user.getUid());
+		ServletActionContext.getRequest().getSession().setAttribute("q", q);
+		return "showMyQ";
+	}
 }
