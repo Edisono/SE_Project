@@ -150,6 +150,7 @@ public class UserAction extends ActionSupport{
 		user.setAddress(request.getParameter("address"));
 		user.setProfile(request.getParameter("profile"));
 		
+		
 		nd.updateUser(user);
 
 		request.getSession().setAttribute("user", user);
