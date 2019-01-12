@@ -15,6 +15,11 @@
 			<result name="error">/register.jsp</result>
 		</action>
 
+		<!-- 用户的action -->
+		<action name="user_*" class="action.UserAction" method="{1}">
+			<result name="modify">/modifyInfo.jsp</result>
+		</action>
+
 		<!-- 资讯的action -->
 		<action name="news_*" class="action.NewsInfoAction" method="{1}">
 			<result name="show">/newsInfo.jsp</result>
