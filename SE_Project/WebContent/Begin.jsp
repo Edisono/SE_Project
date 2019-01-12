@@ -55,7 +55,7 @@
                     <i class="fe fe-bell"></i>
                   </a>
                 </div>
-                <div class="dropdown">
+<div class="dropdown">
                   <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
                   	
                     <span class="avatar" style="background-image: url(#session.user.avator)"></span>
@@ -75,43 +75,46 @@
                     <!-- 游客功能条 -->
                     <s:if test="#session.user.role == 0">
                      <a class="dropdown-item" href="./register.jsp">
+                     <!-- 直接跳转-->
                       <i class="dropdown-icon fe fe-user"></i> 注册
                     </a>
                		 </s:if>
                     <!-- 用户功能条 -->
                     <s:elseif test="#session.user.role == 1">
-                    <a class="dropdown-item" href="./modifyInfo.jsp">
+                    <a class="dropdown-item" href="user_modify.action">
+                    	<!-- 跳转到modifyInfo 直接跳转？-->
                       <i class="dropdown-icon fe fe-user"></i> 设置
                     </a>
                   
-                    <a class="dropdown-item" href="./showMyMessage.jsp">
+                    <a class="dropdown-item" href="message_showMyMessage.action">
                       <i class="dropdown-icon fe fe-send"></i> 留言管理
                     </a>
-                    <a class="dropdown-item" href="./qInfoManage.jsp">
+                    <a class="dropdown-item" href="q_showMyQ.action">
+                    <!-- 看自己的Q么-->
                       <i class="dropdown-icon fe fe-send"></i> 供应信息管理
                     </a>
-                     <a class="dropdown-item" href="./aInfoManage.jsp">
+                     <a class="dropdown-item" href="a_showMyA.action">
                       <i class="dropdown-icon fe fe-send"></i> 求购信息管理
                     </a>
           			</s:elseif>
                     <!-- 管理员功能条 -->
                     <s:else >
-                      <a class="dropdown-item" href="./modifyInfo.jsp">
+                      <a class="dropdown-item" href="user_modify.action">
                       <i class="dropdown-icon fe fe-user"></i> 设置
                     </a>
-                    <a class="dropdown-item" href="./messageManage.jsp">
+                    <a class="dropdown-item" href="message_show.action">
                       <i class="dropdown-icon fe fe-send"></i> 留言管理
                     </a>
-                    <a class="dropdown-item" href="./qInfoManage.jsp">
+                    <a class="dropdown-item" href="q_show.action">
                       <i class="dropdown-icon fe fe-send"></i> 供应信息管理
                     </a>
-                     <a class="dropdown-item" href="./aInfoManage.jsp">
+                     <a class="dropdown-item" href="a_show.action">
                       <i class="dropdown-icon fe fe-send"></i> 求购信息管理
                     </a>
-                    <a class="dropdown-item" href="./newsInfoManage.jsp">
+                    <a class="dropdown-item" href="news_show.action">
                       <i class="dropdown-icon fe fe-send"></i> 资讯信息管理
                     </a>
-                    <a class="dropdown-item" href="./exhibitInfoManage.jsp">
+                    <a class="dropdown-item" href="exhibit_show.action">
                       <i class="dropdown-icon fe fe-send"></i> 展会信息管理
                     </a>
                     </s:else>
@@ -120,7 +123,8 @@
                     <a class="dropdown-item" href="./login.jsp">
                       <i class="dropdown-icon fe fe-log-out"></i>退出
                     </a>
-                     
+                    
+                    
                   </div>
                 </div>
               </div>

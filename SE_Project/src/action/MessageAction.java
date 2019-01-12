@@ -139,10 +139,10 @@ public class MessageAction extends ActionSupport {
 	
 	public String delete() throws SQLException{
 		messagedao.delete(mid);
-		return findMyMessage();
+		return show();
 	}
 	
-	public String findMyMessage() throws SQLException{
+	public String show() throws SQLException{
 		HttpServletRequest request = ServletActionContext.getRequest();
 		UserInfo user = (UserInfo)request.getSession().getAttribute("user");
 		List<MessageInfo> messages = messagedao.findMessagesByUid(user.getUid());
