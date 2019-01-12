@@ -24,7 +24,7 @@
 		<action name="news_*" class="action.NewsInfoAction" method="{1}">
 			<result name="show">/newsInfo.jsp</result>
 			<result name="showDetail">/newsDetailInfo.jsp</result>
-			<result name="manage">/newsInfoManage.jsp</result>
+			<result name="toshow" type="chain">news_show</result>
 		</action>
 
 		<!-- 供应的action -->
@@ -55,7 +55,7 @@
 			method="{1}">
 			<result name="show">/exhibitInfo.jsp</result>
 			<result name="showDetail">/exhibitInfoDetail.jsp</result>
-			<result name="manage">/newsInfoManage.jsp</result>
+			<result name="toshow" type="chain">exhibit_show</result>
 		</action>
 		
 		<!-- 产品的action -->
