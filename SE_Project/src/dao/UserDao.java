@@ -7,6 +7,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
 import db.*;
 import entity.UserInfo;
 
@@ -89,5 +93,33 @@ public class UserDao {
 		return false;
 	}
 	
+	public String modify() throws SQLException{
+		/*
+		HttpServletRequest request = ServletActionContext.getRequest();
+		UserInfo user = (UserInfo)request.getSession().getAttribute("user");
+		
+		request.getSession().setAttribute("user", user);	
+		*/	
+		
+		HttpServletRequest request = ServletActionContext.getRequest();
+		
+		UserInfo user = new UserInfo();
+		UserInfo u=(UserInfo)request.getSession().getAttribute("user");
+		user.setUid(u.getUid());
 
+		
+		user.setEmail( request.getParameter("email"));
+		user.setUsername(request.getParameter("username"));
+		user.setQQ(request.getParameter("QQ"));
+		user.setPhone(request.getParameter("phone"));
+		user.setAddress(request.getParameter("address"));
+		user.setProfile(request.getParameter("profile"));
+		
+		nd.update(user);
+
+		request.getSession().setAttribute("user", user);
+		return "modify";
+
+		
+	}
 }
