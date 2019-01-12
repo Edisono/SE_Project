@@ -34,7 +34,7 @@
                   </div>
                 </div>
               </div>
-	</s:iterator>
+			</s:iterator>
 
               <!-- 需要添加判断，个人/游客不可见 -->
               <s:if test="#session.user.role == 2">

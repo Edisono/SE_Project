@@ -8,9 +8,9 @@
             <div class="row">
               <div class="col-md-3">
                 <h3 class="page-title mb-5">留言服务</h3>
-                <small>个人查询界面</small>	
+                
               </div>
-              <div class="card">
+              
                 <div class="card">
                   <div class="card-header">
                     <h3 class="card-title">查看留言</h3>
@@ -36,11 +36,13 @@
                           <div class="float-right">
                           <a href="#"> <button type="button" class="btn btn-primary btn-space btn-sm">删除</button> </a> 
                           </div>
+                          </div>
+                          </div>
                     </article>
                   </div>
-
-              
                </div>
+               </div>
+              
 
 <s:iterator value="#session.messages" var="xx" status="st">  
 
@@ -76,6 +78,8 @@
                           <div class="float-right">
                           <a href="message_delete?mid=<s:property value="#xx.mid"/>"> <button type="button" class="btn btn-primary btn-space btn-sm">删除</button> </a> 
                           </div>
+                          </div>
+                          </div>
                     </article>
                   </div>
 
@@ -84,6 +88,9 @@
 
 
 </s:iterator>
+</div>
+</div>
+</div>
 
 
 <%@include file="End.jsp"%>
