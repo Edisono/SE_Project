@@ -48,7 +48,6 @@
 			<result name="2">/showproduct2.jsp</result>
 			<result name="3">/showproduct3.jsp</result>
 			<result name="4">/showproduct4.jsp</result>
-			
 		</action>
 				
 		<!-- 留言的action -->

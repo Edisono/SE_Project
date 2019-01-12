@@ -141,19 +141,19 @@
                     <a href="./index.jsp" class="nav-link"><i class="fe fe-home"></i>&nbsp;首页&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./ExhibitInfo.jsp" class="nav-link"><i class="fe fe-box"></i>&nbsp;展会&nbsp;</a>
+                    <a href="./exhibit_show.action" class="nav-link"><i class="fe fe-box"></i>&nbsp;展会&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                     <a href="./newsInfo.jsp" class="nav-link"><i class="fe fe-calendar"></i>&nbsp;咨询&nbsp;</a>
+                     <a href="./news_show.action" class="nav-link"><i class="fe fe-calendar"></i>&nbsp;咨询&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./AInfo.jsp" class="nav-link"><i class="fe fe-file"></i>&nbsp;求购&nbsp;</a>
+                    <a href="./a_show.action" class="nav-link active"><i class="fe fe-file"></i>&nbsp;求购&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./QInfo.jsp" class="nav-link"><i class="fe fe-check-square"></i>&nbsp;供应&nbsp;</a>
+                    <a href="./q_show.action" class="nav-link"><i class="fe fe-check-square"></i>&nbsp;供应&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./productInfo.jsp" class="nav-link"><i class="fe fe-image"></i>&nbsp;产品</a>
+                    <a href="./product_show.action" class="nav-link"><i class="fe fe-image"></i>&nbsp;产品</a>
                   </li>
                 </ul>
               </div>
