@@ -62,6 +62,7 @@
                   </div>
                   </div>
 			</s:iterator>
-
+			</div>
+			</div>
                  
    <%@include file="End.jsp"%>
