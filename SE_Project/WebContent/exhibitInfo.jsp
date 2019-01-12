@@ -98,19 +98,19 @@
                     <a href="./index.jsp" class="nav-link"><i class="fe fe-home"></i>&nbsp;首页&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./exhibit_show.action" class="nav-link"><i class="fe fe-box"></i>&nbsp;展会&nbsp;</a>
+                    <a href="exhibit_show.action" class="nav-link active"><i class="fe fe-box"></i>&nbsp;展会&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                     <a href="./news_show.action" class="nav-link"><i class="fe fe-calendar"></i>&nbsp;咨询&nbsp;</a>
+                     <a href="news_show.action" class="nav-link"><i class="fe fe-calendar"></i>&nbsp;资讯&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./a_show.action" class="nav-link active"><i class="fe fe-file"></i>&nbsp;求购&nbsp;</a>
+                    <a href="a_show.action" class="nav-link active"><i class="fe fe-file"></i>&nbsp;求购&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./q_show.action" class="nav-link"><i class="fe fe-check-square"></i>&nbsp;供应&nbsp;</a>
+                    <a href="q_show.action" class="nav-link"><i class="fe fe-check-square"></i>&nbsp;供应&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./product_show.action" class="nav-link"><i class="fe fe-image"></i>&nbsp;产品</a>
+                    <a href="product_show.action" class="nav-link"><i class="fe fe-image"></i>&nbsp;产品</a>
                   </li>
                 </ul>
               </div>
@@ -126,52 +126,40 @@
                 </h1>
               </div>
             
+            <s:iterator value="#session.exhibitList" var="xx" status="st">  
             <div class="col-lg-12">
                 <div class="card card-aside">
-                  <a href="#" class="card-aside-column" style="background-image: url(E:/图片/2.jpg)"></a>
+                
+                  <a href="#" class="card-aside-column" style="background-image: url(
+                 <s:property value="#xx.eimage"/> )"></a>
+                 
                   <div class="card-body d-flex flex-column">                         
-                    <h4><a href="#">标题</a></h4>
+                    <h4><a href="exhibit_showDetail.action?eid=<s:property value="#xx.eid"/> " > 题目：<s:property value="#xx.etitle"/>  </a></h4>
                     
                     <div class="d-flex align-items-center pt-5 mt-auto">
                       <div></div>
                       <div>
-                         <div>发布人姓名</div>
-                        <small class="d-block text-muted">发布时间</small>
+                         <div>发布人：<s:property value="#xx.username"/></div>
+                        <small class="d-block text-muted">展会时间：<s:property value="#xx.etime"/></small>
                       </div>
                       <div class="ml-auto text-muted">
-                        <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-eye mr-1"></i> 100</a>
-                        <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-heart mr-1"></i> 42</a>
+                        <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-eye mr-1"></i> <%=(int)(Math.random()*100) %></a>
+                        <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-heart mr-1"></i> 0</a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              
-              <div class="col-lg-12">
-                <div class="card card-aside">
-                  <a href="#" class="card-aside-column" style="background-image: url(demo/photos/aneta-ivanova-776-500.jpg)"></a>
-                  <div class="card-body d-flex flex-column">                         
-                    <h4><a href="#">标题</a></h4>
-                    
-                    <div class="d-flex align-items-center pt-5 mt-auto">
-                      <div></div>
-                      <div>
-                         <div>发布人姓名</div>
-                        <small class="d-block text-muted">发布时间</small>
-                      </div>
-                      <div class="ml-auto text-muted">
-                        <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-eye mr-1"></i> 100</a>
-                        <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-heart mr-1"></i> 42</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+	</s:iterator>
 
               <!-- 需要添加判断，个人/游客不可见 -->
-              <div class="page-header">
-                <a href="./addExhibitInfo.html" class="btn btn-primary"><i class="fe fe-plus"></i> 发布新的展会信息</a>
-              </div>
+              <s:if test="#session.user.role == 2">
+              <a href="/addExhibitInfo.jsp" class="btn btn-primary"><i class="fe fe-plus"></i> 发布新的展会信息</a>
+              </s:if>
+              <s:elseif test="#session.user.role == 3">
+              <a href="/addExhibitInfo.jsp" class="btn btn-primary"><i class="fe fe-plus"></i> 发布新的展会信息</a>
+              </s:elseif>
+             
 
 
             </div>

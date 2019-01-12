@@ -91,19 +91,19 @@
                     <a href="./index.jsp" class="nav-link"><i class="fe fe-home"></i>&nbsp;首页&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./exhibit_show.action" class="nav-link"><i class="fe fe-box"></i>&nbsp;展会&nbsp;</a>
+                    <a href="exhibit_show.action" class="nav-link active"><i class="fe fe-box"></i>&nbsp;展会&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                     <a href="./news_show.action" class="nav-link"><i class="fe fe-calendar"></i>&nbsp;咨询&nbsp;</a>
+                     <a href="news_show.action" class="nav-link"><i class="fe fe-calendar"></i>&nbsp;资讯&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./a_show.action" class="nav-link active"><i class="fe fe-file"></i>&nbsp;求购&nbsp;</a>
+                    <a href="a_show.action" class="nav-link active"><i class="fe fe-file"></i>&nbsp;求购&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./q_show.action" class="nav-link"><i class="fe fe-check-square"></i>&nbsp;供应&nbsp;</a>
+                    <a href="q_show.action" class="nav-link"><i class="fe fe-check-square"></i>&nbsp;供应&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./product_show.action" class="nav-link"><i class="fe fe-image"></i>&nbsp;产品</a>
+                    <a href="product_show.action" class="nav-link"><i class="fe fe-image"></i>&nbsp;产品</a>
                   </li>
                 </ul>
               </div>
@@ -111,7 +111,7 @@
           </div>
         </div>
         <!-- HEAD END -->
-          <div class="my-3 my-md-5">
+         <div class="my-3 my-md-5">
             <div class="container">
               <div class="page-header">
                 <h1 class="page-title">
@@ -119,27 +119,32 @@
                 </h1>
               </div>
             
-            <div class="row">
+                <div class="row">
+              
               <div class="col-lg-9">
                 <div class="card">
                   <div class="card-body">
                      <div class="text-wrap p-lg-6">
                         <a href="javascript:void(0)" class="mb-3">
-                          <img src="demo/photos/nathan-anderson-316188-500.jpg" alt="咨询图片" class="rounded">
+                          <img src=<s:property value="%{#session.exhibit.eimage}"/> alt="咨询图片" class="rounded">
                         </a>
                     </div>  
                     <div class="text-wrap p-lg-6">
-                      <h2 class="mt-0 mb-4">标题</h2>
-                      <p>内容</p>
+                      <h2 class="mt-0 mb-4">标题：<s:property value="%{#session.exhibit.etitle}"/></h2>
+                      <p>主要内容：<s:property value="%{#session.exhibit.econtent}"/></p>
                        <div>
-                         <div>发布人姓名</div>
-                        <small class="d-block text-muted">发布时间</small>
+                         <div>发布人：<s:property value="%{#session.exhibit.username}"/></div>
+                        <small class="d-block text-muted">展会时间：<s:property value="%{#session.exhibit.etime}"/></small>
                       </div>                 
                       </div>
                     </div>
+                   
                 </div>
+
             </div>
           </div>
+         
+         
           <!--添加留言-->
           <div class="card-footer text-right">
               <a href="addMessage.html">  <button class="btn btn-primary">添加留言</button> </a> 
