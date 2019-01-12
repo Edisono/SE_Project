@@ -139,7 +139,6 @@ public class AInfoAction {
 		ServletActionContext.getRequest().getSession().setAttribute("messageInfo", messageInfo);
 		ServletActionContext.getRequest().getSession().setAttribute("a", a);
 		ServletActionContext.getRequest().getSession().setAttribute("mobjtype", 2);
-		
 		return "showDetail";
 	}
 	

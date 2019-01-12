@@ -18,7 +18,7 @@ document.getElementsByTagName("title")[0].innerText = '留言';
 						<h3 class="card-title">编辑留言</h3>
 					</div>
 					<div class="card-body">
-						<form action="message_add">
+						<form action="message_add" method="post">
 
 							<textarea rows="10" name="message" class="form-control"></textarea>
 							<div class="btn-list mt-4 text-right">

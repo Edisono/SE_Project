@@ -52,7 +52,7 @@ public class ProductDao {
 		MessageInfo message= null;
 		//conn=DBUtil.getConnection();
 		conn=C3P0JdbcUtil.getConnection();
-		String sql = "SELECT * FROM MessageInfo WHERE mobjid=? and mobjtype=4 order by pid desc";
+		String sql = "SELECT * FROM MessageInfo WHERE mobjid=? and mobjtype=4 order by mobjid desc";
 		ps = conn.prepareStatement(sql);
 		ps.setString(1, String.valueOf(pId));
 		rs=ps.executeQuery();
@@ -110,9 +110,9 @@ public class ProductDao {
 		ProductInfo product = null;
 		//conn=DBUtil.getConnection();
 		conn=C3P0JdbcUtil.getConnection();
-		String sql = "SELECT * FROM ProductInfo WHERE pname like %?% order by pid desc";
+		String sql = "SELECT * FROM ProductInfo WHERE pname like ? order by pid desc";
 		ps = conn.prepareStatement(sql);
-		ps.setString(1, like);
+		ps.setString(1, "%"+like+"%");
 		rs=ps.executeQuery();
 		while(rs.next()) {
 			product = new ProductInfo();

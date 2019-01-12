@@ -17,11 +17,14 @@ document.getElementsByTagName("title")[0].innerText = '求购详情';
 			<div class="col-lg-9">
 				<div class="card">
 					<div class="card-body">
+						
 						<div class="text-wrap p-lg-6">
-							<a href="q_showDetail?qid=<s:property value="#xx.qid"/>"
-						class="card-aside-column"
-						style="background-image: url(<s:property value="#xx.qimage"/>)"></a>
-						</div>
+                        <a href=" " class="mb-3">
+                          <img src="<s:property value="%{#session.q.qimage}"/>" alt="咨询图片" class="rounded">
+                        </a>
+                    </div>  
+					
+						
 						<div class="text-wrap p-lg-6">
 							<h2 class="mt-0 mb-4">
 								<s:property value="%{#session.q.qtitle}" />

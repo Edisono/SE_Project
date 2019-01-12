@@ -125,7 +125,6 @@ public class MessageDao {
 		ps.setString(5, message.getMobjtitle());
 		ps.setInt(6, message.getMobjtype());
 		ps.executeUpdate();
-		System.out.println("2");
 		conn.close();
 		ps.close();
 

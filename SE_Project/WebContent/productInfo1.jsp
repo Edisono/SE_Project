@@ -59,7 +59,7 @@
 								offers</td>
 							<td class="text-right"><strong><s:property
 										value="#xx.pprice" /></strong></td>
-							<td class="text-right"><a href="./product_showDetail" class="btn btn-primary"><i
+							<td class="text-right"><a href="./product_showDetail?pid=<s:property value="#xx.pid"/>" class="btn btn-primary"><i
 									class="fe fe-plus"></i> 查看详情</a></td>
 						</tr>
 					</table>

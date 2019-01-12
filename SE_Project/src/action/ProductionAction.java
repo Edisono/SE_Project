@@ -102,7 +102,7 @@ public class ProductionAction extends ActionSupport {
 
 	public String showScience() throws SQLException {
 		ArrayList<ProductInfo> ProductList = new ArrayList<ProductInfo>();
-		String ptype = "绉戞妧";
+		String ptype = "科技";
 		ProductList = (ArrayList<ProductInfo>) pd.findProductByTpye(ptype);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductList", ProductList);
 		return "showScience";
@@ -110,7 +110,7 @@ public class ProductionAction extends ActionSupport {
 
 	public String showCartoon() throws SQLException {
 		ArrayList<ProductInfo> ProductList = new ArrayList<ProductInfo>();
-		String ptype = "鍔ㄦ极";
+		String ptype = "动漫";
 		ProductList = (ArrayList<ProductInfo>) pd.findProductByTpye(ptype);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductList", ProductList);
 		return "showCartoon";
@@ -118,7 +118,7 @@ public class ProductionAction extends ActionSupport {
 
 	public String showVideo() throws SQLException {
 		ArrayList<ProductInfo> ProductList = new ArrayList<ProductInfo>();
-		String ptype = "褰辫";
+		String ptype = "影视";
 		ProductList = (ArrayList<ProductInfo>) pd.findProductByTpye(ptype);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductList", ProductList);
 		return "showVideo";
@@ -126,7 +126,7 @@ public class ProductionAction extends ActionSupport {
 
 	public String showAudio() throws SQLException {
 		ArrayList<ProductInfo> ProductList = new ArrayList<ProductInfo>();
-		String ptype = "闊冲儚";
+		String ptype = "音像";
 		ProductList = (ArrayList<ProductInfo>) pd.findProductByTpye(ptype);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductList", ProductList);
 		return "showAudio";
@@ -141,8 +141,9 @@ public class ProductionAction extends ActionSupport {
 
 	public String showDetail() throws SQLException {
 		ProductInfo ProductDetail = new ProductInfo();
-		ProductDetail = (ProductInfo) pd.findProductById(pid);
+		ProductDetail = pd.findProductById(pid);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductDetail", ProductDetail);
+		System.out.println(pid);
 		ArrayList<MessageInfo> ProductMessage = new ArrayList<MessageInfo>();
 		ProductMessage = (ArrayList<MessageInfo>) pd.getProductMessage(pid);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductMessage", ProductMessage);
