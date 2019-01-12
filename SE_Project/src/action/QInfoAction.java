@@ -216,14 +216,6 @@ public class QInfoAction {
 			
 		}
 		
-		Date date = new Date();
-		SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
-		String time2 = simpleDateFormat.format(date.getTime());
-		date = simpleDateFormat.parse(time2);
-		Calendar rightNow = Calendar.getInstance();
-        rightNow.setTime(date);
-        rightNow.add(Calendar.DAY_OF_YEAR,Integer.parseInt(time));
-        qdate=rightNow.getTime();
 
         QInfo q = new QInfo();
         q.setQid(sessionq.getQid());
