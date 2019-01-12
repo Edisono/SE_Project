@@ -65,7 +65,7 @@
                     <label class="custom-control custom-checkbox">
                       <input type="checkbox" class="custom-control-input" />
                       <span class="custom-control-label">记住账号</span>
-                       <a href="./forgot-password.html" class="float-right small">忘记密码</a>
+                       <a href="./forgot-password.jsp" class="float-right small">忘记密码</a>
                     </label>
                   </div>
                   <div class="form-footer">
