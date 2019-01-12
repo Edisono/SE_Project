@@ -5,6 +5,15 @@ import java.sql.SQLException;
 import com.opensymphony.xwork2.ActionSupport;
 
 import dao.UserDao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import db.*;
+import entity.UserInfo;
 
 public class UserAction extends ActionSupport{
 	private int uid;// ??锟�?锟斤拷???锟斤拷??id
@@ -107,6 +116,11 @@ public class UserAction extends ActionSupport{
 		this.avator = avator;
 	}
 
+	Connection conn;
+	PreparedStatement ps;
+	ResultSet rs;
+
+	
 	private UserDao nd=new UserDao();
 	
 	//鑾峰彇鐢ㄦ埛淇℃伅骞舵樉绀哄湪淇敼椤甸潰
@@ -117,6 +131,13 @@ public class UserAction extends ActionSupport{
 		
 		request.getSession().setAttribute("user", user);	
 		*/	
+		conn = C3P0JdbcUtil.getConnection();
+
+		String sql = "update userinfo set username=?, email=?……";
+		ps = conn.prepareStatement(sql);
+		ps.setString(1,this.username);
+		
+		
 		return "modify";
 	}
 }

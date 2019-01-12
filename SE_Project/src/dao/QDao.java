@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import db.C3P0JdbcUtil;
-import entity.QInfo;;
+import entity.QInfo;
 
 public class QDao {
 	public List<QInfo> findAllQ() throws SQLException{

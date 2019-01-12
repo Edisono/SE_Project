@@ -7,10 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
-import dao.ADao;
 import entity.AInfo;
 import entity.UserInfo;
-
+import dao.ADao;
 public class AInfoAction {
 	private ADao ad=new ADao();
 	private int aid;
@@ -64,13 +63,13 @@ public class AInfoAction {
 		return "showDetail";
 	}
 	
-	public String showMyA() throws SQLException{
-		HttpServletRequest request = ServletActionContext.getRequest();
-		UserInfo user = (UserInfo)request.getSession().getAttribute("user");
-		List<QInfo> a = ad.findQByUid(user.getUid());
-		ServletActionContext.getRequest().getSession().setAttribute("a", a);
-		return "showMyA";
-	}
-	
+//	public String showMyA() throws SQLException{
+//		HttpServletRequest request = ServletActionContext.getRequest();
+//		UserInfo user = (UserInfo)request.getSession().getAttribute("user");
+//		List<AInfo> a = ad.findAByUid(user.getUid());
+//		ServletActionContext.getRequest().getSession().setAttribute("a", a);
+//		return "showMyA";
+//	}
+//	
 	
 }
