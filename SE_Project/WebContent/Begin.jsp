@@ -58,7 +58,7 @@
 <div class="dropdown">
                   <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
                   	
-                    <span class="avatar" style="background-image: url(<s:property value="#session.user.avator"/>)"></span>
+                    <span class="avatar" style="background-image: url(#session.user.avator)"></span>
                     <span class="ml-2 d-none d-lg-block">
                       <span class="text-default"><s:property value="#session.user.username"/></span>
                       <small class="text-muted d-block mt-1">
@@ -90,12 +90,12 @@
                     <a class="dropdown-item" href="message_show.action">
                       <i class="dropdown-icon fe fe-send"></i> 留言管理
                     </a>
-                    <a class="dropdown-item" href="q_show.action">
+                    <a class="dropdown-item" href="a_showMyA.action">
                     <!-- 看自己的Q么-->
-                      <i class="dropdown-icon fe fe-send"></i> 求购信息管理
-                    </a>
-                     <a class="dropdown-item" href="a_show.action">
                       <i class="dropdown-icon fe fe-send"></i> 供应信息管理
+                    </a>
+                     <a class="dropdown-item" href="q_showMyQ.action">
+                      <i class="dropdown-icon fe fe-send"></i> 求购信息管理
                     </a>
           			</s:elseif>
                     <!-- 管理员功能条 -->
@@ -106,11 +106,11 @@
                     <a class="dropdown-item" href="message_show.action">
                       <i class="dropdown-icon fe fe-send"></i> 留言管理
                     </a>
-                    <a class="dropdown-item" href="q_show.action">
-                      <i class="dropdown-icon fe fe-send"></i> 求购信息管理
-                    </a>
-                     <a class="dropdown-item" href="a_show.action">
+                    <a class="dropdown-item" href="a_showMyA.action">
                       <i class="dropdown-icon fe fe-send"></i> 供应信息管理
+                    </a>
+                     <a class="dropdown-item" href="q_showMyQ.action">
+                      <i class="dropdown-icon fe fe-send"></i> 求购信息管理
                     </a>
                     <a class="dropdown-item" href="news_show.action">
                       <i class="dropdown-icon fe fe-send"></i> 资讯信息管理
@@ -151,10 +151,10 @@
                      <a href="news_show.action" class="nav-link"><i class="fe fe-calendar"></i>&nbsp;咨询&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="a_show.action" class="nav-link"><i class="fe fe-file"></i>&nbsp;求购&nbsp;</a>
+                    <a href="a_show.action" class="nav-link"><i class="fe fe-file"></i>&nbsp;供应&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="q_show.action" class="nav-link"><i class="fe fe-check-square"></i>&nbsp;供应&nbsp;</a>
+                    <a href="q_show.action" class="nav-link"><i class="fe fe-check-square"></i>&nbsp;求购&nbsp;</a>
                   </li>
                   <li class="nav-item">
                     <a href="product_show.action" class="nav-link"><i class="fe fe-image"></i>&nbsp;产品</a>
