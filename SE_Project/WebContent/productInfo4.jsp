@@ -46,7 +46,7 @@
 				<div class="card">
 					<table class="table card-table table-vcenter">
 						<tr>
-							<td><a href="./product_showDetail?aid=<s:property value="#xx.pid"/>"
+							<td><a href="./product_showDetail?pid=<s:property value="#xx.pid"/>"
 								class="card-aside-column"
 								style="background-image: url(<s:property value="#xx.pimage"/>)"></a></td>
 
