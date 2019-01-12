@@ -18,7 +18,7 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
     <!-- Generated: 2018-04-06 16:27:42 +0200 -->
-    <title>供应</title>
+    <title>求购</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
     <script src="./assets/js/require.min.js"></script>
@@ -122,7 +122,7 @@
             <div class="container">
               <div class="page-header">
                 <h1 class="page-title">
-                  &nbsp;供应
+                  &nbsp;求购
                 </h1>
               </div>
             
@@ -170,7 +170,7 @@
 
 
               <div class="page-header">
-                <a href="./addqInfo.html" class="btn btn-primary"><i class="fe fe-plus"></i> 发布新的供应信息</a>
+                <a href="./addqInfo.html" class="btn btn-primary"><i class="fe fe-plus"></i> 发布新的求购信息</a>
               </div>
           
             </div>

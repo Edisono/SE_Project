@@ -18,7 +18,7 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
     <!-- Generated: 2018-04-06 16:27:42 +0200 -->
-    <title>求购</title>
+    <title>供应</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
     <script src="./assets/js/require.min.js"></script>
@@ -104,10 +104,10 @@
                      <a href="./NewsInfo.html" class="nav-link"><i class="fe fe-calendar"></i>&nbsp;资讯&nbsp;</a>
                   </li>
                   <li class="nav-item"> 
-                    <a href="./AInfo.html" class="nav-link active"><i class="fe fe-file"></i>&nbsp;求购&nbsp;</a>
+                    <a href="./AInfo.html" class="nav-link"><i class="fe fe-file"></i>&nbsp;求购&nbsp;</a>
                   </li>
                   <li class="nav-item">
-                    <a href="./QInfo.html" class="nav-link"><i class="fe fe-check-square"></i>&nbsp;供应&nbsp;</a>
+                    <a href="./QInfo.html" class="nav-link active"><i class="fe fe-check-square"></i>&nbsp;供应&nbsp;</a>
                   </li>
                   <li class="nav-item">
                     <a href="./products.html" class="nav-link"><i class="fe fe-image"></i>&nbsp;产品</a>
@@ -122,7 +122,7 @@
             <div class="container">
               <div class="page-header">
                 <h1 class="page-title">
-                  &nbsp;求购
+                  &nbsp;供应
                 </h1>
               </div>
             
@@ -169,7 +169,7 @@
               </div>
               
               <div class="page-header">
-                <a href="./addAInfo.html" class="btn btn-primary"><i class="fe fe-plus"></i> 发布新的求购信息</a>
+                <a href="./addAInfo.html" class="btn btn-primary"><i class="fe fe-plus"></i> 发布新的供应信息</a>
               </div>
 
             </div>

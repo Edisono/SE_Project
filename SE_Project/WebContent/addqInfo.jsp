@@ -18,7 +18,7 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
     <!-- Generated: 2018-04-06 16:27:42 +0200 -->
-    <title>发布供应信息</title>
+    <title>发布求购信息</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
     <script src="./assets/js/require.min.js"></script>
@@ -123,29 +123,38 @@
           <div class="container">
             <div class="row">
               <div class="col-md-3">
-                <h3 class="page-title mb-5">供应服务</h3>
+                <h3 class="page-title mb-5">求购服务</h3>
               </div>
              
              <div class="card">
                 <div class="card">
                   <div class="card-header">
-                     <h3 class="card-title">编辑供应信息</h3>
+                     <h3 class="card-title">编辑求购信息</h3>
                    </div>
                   <div class="card-body">
                   <form  action="#" method="post" enctype="multipart/form-data">
                   <div class="form-group">
-                          <label class="form-label">供应信息标题</label>
+                          <label class="form-label">求购信息标题</label>
                           <input type="text" class="form-control" name="ntitle" placeholder="Title..">
                   </div>
                   <div class="form-group">
-                      <label class="form-label">供应产品图片</label>
+                          <label class="form-label">求购时间范围</label>
+                          <select name="atime" id="select-beast" class="form-control custom-select">
+                          <option value="1">一个星期</option>
+                          <option value="2">一个月</option>
+                          <option value="3">半年</option>
+                          <option value="4">一年</option>
+                          </select>
+                  </div>
+                  <div class="form-group">
+                      <label class="form-label">求购产品图片</label>
                       <div class="custom-file">
                       <input type="file" class="custom-file-input" name="nimage">
                       <label class="custom-file-label">Choose Image</label>
                     </div>
                   </div>
                   <div class="form-group">
-                      <label class="form-label">供应产品介绍</label>
+                      <label class="form-label">求购产品介绍</label>
                       <textarea class="form-control" name="ncontent" rows="6" placeholder="Content..">
                       </textarea>
                   </div>

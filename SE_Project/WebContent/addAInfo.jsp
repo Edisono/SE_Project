@@ -138,6 +138,15 @@
                           <input type="text" class="form-control" name="ntitle" placeholder="Title..">
                   </div>
                   <div class="form-group">
+                          <label class="form-label">求购时间范围</label>
+                          <select name="beast" id="select-beast" class="form-control custom-select">
+                          <option value="1">一天内</option>
+                          <option value="3">三天内</option>
+                          <option value="5">五天内</option>
+                          <option value="10">十天内</option>
+                          </select>
+                  </div>
+                  <div class="form-group">
                       <label class="form-label">求购产品图片</label>
                       <div class="custom-file">
                       <input type="file" class="custom-file-input" name="nimage">
@@ -146,9 +155,8 @@
                   </div>
                   <div class="form-group">
                       <label class="form-label">求购产品介绍</label>
-                      <textarea class="form-control" name="ncontent" rows="6" placeholder="Content..">
-                      </textarea>
-                  </div>
+                      <textarea class="form-control" name="ncontent" rows="6" placeholder="Content.."></textarea>
+                   </div>
 
                   <div class="float-right">
                         <button type="submit" class="btn btn-primary btn-space">发布</button>   
