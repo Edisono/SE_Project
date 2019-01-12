@@ -39,6 +39,18 @@
 			<result name="show">/exhibitInfo.jsp</result>
 			<result name="showDetail">/showexhibitDetail.jsp</result>
 		</action>
+		
+		<!-- 产品的action -->
+		<action name="product_*" class="action.ProductAction"
+			method="{1}">
+			<result name="show">/productInfo.jsp</result>
+			<result name="1">/showproduct1.jsp</result>
+			<result name="2">/showproduct2.jsp</result>
+			<result name="3">/showproduct3.jsp</result>
+			<result name="4">/showproduct4.jsp</result>
+			
+		</action>
+				
 		<!-- 留言的action -->
 		<action name="message_*" class="action.MessageAction" method="{1}">
 			<result name="showNews" type="chain">news_showDetail</result>
