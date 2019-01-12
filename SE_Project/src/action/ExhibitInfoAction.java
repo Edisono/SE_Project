@@ -91,6 +91,7 @@ public class ExhibitInfoAction extends ActionSupport{
 		
 		ServletActionContext.getRequest().getSession().setAttribute("exhibit", exhibit);
 		ServletActionContext.getRequest().getSession().setAttribute("exhibitMessageList", exhibitMessageList);
+		ServletActionContext.getRequest().getSession().setAttribute("mobjtype", 1);
 		return "showDetail";
 	}
 	
@@ -99,6 +100,7 @@ public class ExhibitInfoAction extends ActionSupport{
 		
 		String realPath = ServletActionContext.getServletContext().getRealPath("/demo/exhibit");
 		File file = new File(realPath);
+		//获取文件末尾 eg：.jpg
 		System.out.println(eid);
 		System.out.println(etitle);
 		System.out.println(eimage);
@@ -107,14 +109,14 @@ public class ExhibitInfoAction extends ActionSupport{
 		System.out.println(fileend);
 		if(!file.exists()) file.mkdirs();
 		try {
-			FileUtils.copyFile(eimage,new File(file,ed.getMaxId()+""));
+			FileUtils.copyFile(eimage,new File(file,ed.getMaxId()+fileend));
 		}catch (IOException e) {
 		  e.printStackTrace();
 		}
 		
 		ExhibitInfo e=new ExhibitInfo();
 		e.setEcontent(econtent);
-		e.setEimage("/demo/exhibit"+eimage+fileend);
+		e.setEimage("./demo/exhibit/"+ed.getMaxId()+fileend);
 		e.setEtitle(etitle);
 		e.setUid(user.getUid());
 		e.setUsername(user.getUsername());
