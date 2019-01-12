@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="Begin.jsp"%>
- <script type="text/javascript">
-document.getElementsByTagName("title")[0].innerText = '展会';
-</script>       
+        
         <div class="my-3 my-md-6">
           <div class="container">
             <div class="row">
@@ -17,21 +15,21 @@ document.getElementsByTagName("title")[0].innerText = '展会';
                      <h3 class="card-title">编辑展会</h3>
                    </div>
                   <div class="card-body">
-                  <form  action="#" method="post" enctype="multipart/form-data">
+                  <form  action="exhibit_add" method="post" enctype="multipart/form-data">
                   <div class="form-group">
                           <label class="form-label">展会名称</label>
-                          <input type="text" class="form-control" name="ntitle" placeholder="Title..">
+                          <input type="text" class="form-control" name="etitle" placeholder="Title..">
                   </div>
                   <div class="form-group">
                       <label class="form-label">展会图片</label>
                       <div class="custom-file">
-                      <input type="file" class="custom-file-input" name="nimage">
+                      <input type="file" class="custom-file-input" name="eimage">
                       <label class="custom-file-label">Choose Image</label>
                     </div>
                   </div>
                   <div class="form-group">
                       <label class="form-label">展会内容</label>
-                      <textarea class="form-control" name="ncontent" rows="6" placeholder="Content..">
+                      <textarea class="form-control" name="econtent" rows="6" placeholder="Content..">
                       </textarea>
                   </div>
 
@@ -44,6 +42,4 @@ document.getElementsByTagName("title")[0].innerText = '展会';
               </div>
             </div>
           </div> 
-          </div>
-          </div>
 <%@include file="End.jsp"%>
