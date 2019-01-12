@@ -48,6 +48,19 @@
 			<result name="showDetail">/exhibitInfoDetail.jsp</result>
 			<result name="manage">/newsInfoManage.jsp</result>
 		</action>
+		
+		<!-- 产品的action -->
+		<action name="product_*" class="action.ProductionAction"
+			method="{1}">
+			<result name="showScience">/productInfo.jsp</result>
+			<result name="showCartoon">/productInfo1.jsp</result>
+			<result name="showAudio">/productInfo2.jsp</result>
+			<result name="showVideo">/productInfo3.jsp</result>
+			<result name="search">/productInfo4.jsp</result>
+			<result name="showDetail">/productDetailInfo.jsp</result>
+		</action>
+		
+		
 		<!-- 留言的action -->
 		<action name="message_*" class="action.MessageAction" method="{1}">
 			<result name="showNews" type="chain">news_showDetail</result>
