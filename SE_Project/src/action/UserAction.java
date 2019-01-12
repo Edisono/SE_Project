@@ -12,6 +12,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
 import db.*;
 import entity.UserInfo;
 
@@ -124,20 +128,33 @@ public class UserAction extends ActionSupport{
 	private UserDao nd=new UserDao();
 	
 	//鑾峰彇鐢ㄦ埛淇℃伅骞舵樉绀哄湪淇敼椤甸潰
-	public String modify() throws SQLException{
+	public String modify() throws Exception{
 		/*
 		HttpServletRequest request = ServletActionContext.getRequest();
 		UserInfo user = (UserInfo)request.getSession().getAttribute("user");
 		
 		request.getSession().setAttribute("user", user);	
 		*/	
-		conn = C3P0JdbcUtil.getConnection();
+		
+		HttpServletRequest request = ServletActionContext.getRequest();
+		
+		UserInfo user = new UserInfo();
+		UserInfo u=(UserInfo)request.getSession().getAttribute("user");
+		user.setUid(u.getUid());
 
-		String sql = "update userinfo set username=?, email=?……";
-		ps = conn.prepareStatement(sql);
-		ps.setString(1,this.username);
 		
+		user.setEmail( request.getParameter("email"));
+		user.setUsername(request.getParameter("username"));
+		user.setQQ(request.getParameter("QQ"));
+		user.setPhone(request.getParameter("phone"));
+		user.setAddress(request.getParameter("address"));
+		user.setProfile(request.getParameter("profile"));
 		
+		nd.updateUser(user);
+
+		request.getSession().setAttribute("user", user);
 		return "modify";
+
+		
 	}
 }

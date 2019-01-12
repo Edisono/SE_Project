@@ -93,33 +93,30 @@ public class UserDao {
 		return false;
 	}
 	
-	public String modify() throws SQLException{
-		/*
-		HttpServletRequest request = ServletActionContext.getRequest();
-		UserInfo user = (UserInfo)request.getSession().getAttribute("user");
-		
-		request.getSession().setAttribute("user", user);	
-		*/	
-		
-		HttpServletRequest request = ServletActionContext.getRequest();
-		
-		UserInfo user = new UserInfo();
-		UserInfo u=(UserInfo)request.getSession().getAttribute("user");
-		user.setUid(u.getUid());
 
-		
-		user.setEmail( request.getParameter("email"));
-		user.setUsername(request.getParameter("username"));
-		user.setQQ(request.getParameter("QQ"));
-		user.setPhone(request.getParameter("phone"));
-		user.setAddress(request.getParameter("address"));
-		user.setProfile(request.getParameter("profile"));
-		
-		nd.update(user);
+	
+	public boolean updateUser(UserInfo user) throws Exception {
 
-		request.getSession().setAttribute("user", user);
-		return "modify";
+		conn = C3P0JdbcUtil.getConnection();
 
+		String sql = "update userinfo set email=?,username=?,qq=?,phone=?,address=?,profile=? where uid=?";
+		ps = conn.prepareStatement(sql);
+		ps.setString(1,user.getEmail());
+		ps.setString(2, user.getUsername());
+		ps.setString(3, user.getQQ());
+		ps.setString(4, user.getPhone());
+		ps.setString(5, user.getAddress());
+		ps.setString(6, user.getProfile());
+		ps.setInt(7, user.getUid());
 		
+		int i = ps.executeUpdate();
+
+		C3P0JdbcUtil.release(conn, ps, rs);
+
+		if (i != 0) {
+			return true;
+		}
+
+		return false;
 	}
 }
