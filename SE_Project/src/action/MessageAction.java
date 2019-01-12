@@ -115,6 +115,8 @@ public class MessageAction extends ActionSupport {
 		messageadd.setMobjtitle(mobjtitle);
 		messageadd.setMobjtype(mobjtype);
 		messagedao.insert(messageadd);
+		
+		System.out.println("1");
 		switch (mobjtype) {
 		case 0:
 			this.setNid(mobjid);
@@ -124,7 +126,7 @@ public class MessageAction extends ActionSupport {
 			return "showExhibit";
 		case 2:
 			this.setAid(mobjid);
-			return "showA";
+			return "showA"; 
 		case 3:
 			this.setQid(mobjid);
 			return "showQ";
@@ -145,8 +147,14 @@ public class MessageAction extends ActionSupport {
 	public String show() throws SQLException{
 		HttpServletRequest request = ServletActionContext.getRequest();
 		UserInfo user = (UserInfo)request.getSession().getAttribute("user");
-		List<MessageInfo> messages = messagedao.findMessagesByUid(user.getUid());
-		ServletActionContext.getRequest().getSession().setAttribute("messages", messages);
+		if(user.getRole()==3){
+			List<MessageInfo> messages = messagedao.findAllMessages();
+			ServletActionContext.getRequest().getSession().setAttribute("messages", messages);
+		}
+		else{
+			List<MessageInfo> messages = messagedao.findMessagesByUid(user.getUid());
+			ServletActionContext.getRequest().getSession().setAttribute("messages", messages);
+		}
 		return "showMyMessage";
 	}
 	
