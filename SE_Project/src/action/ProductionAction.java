@@ -1,4 +1,4 @@
-package action;  
+package action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class ProductionAction extends ActionSupport {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private ProductDao pd=new ProductDao();
+	private ProductDao pd = new ProductDao();
 	private int pid;
 	private String pname;
 	private String ptype;
@@ -28,102 +28,117 @@ public class ProductionAction extends ActionSupport {
 	private String pimage;
 	private int puserid;
 	private String pusername;
-	
+
 	public int getPid() {
 		return pid;
 	}
+
 	public void setPid(int pid) {
 		this.pid = pid;
 	}
+
 	public String getPname() {
 		return pname;
 	}
+
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
+
 	public String getPtype() {
 		return ptype;
 	}
+
 	public void setPtype(String ptype) {
 		this.ptype = ptype;
 	}
+
 	public float getPprice() {
 		return pprice;
 	}
+
 	public void setPprice(float pprice) {
 		this.pprice = pprice;
 	}
+
 	public String getPintroduce() {
 		return pintroduce;
 	}
+
 	public void setPintroduce(String pintroduce) {
 		this.pintroduce = pintroduce;
 	}
+
 	public String getPimage() {
 		return pimage;
 	}
+
 	public void setPimage(String pimage) {
 		this.pimage = pimage;
 	}
+
 	public int getPuserid() {
 		return puserid;
 	}
+
 	public void setPuserid(int puserid) {
 		this.puserid = puserid;
 	}
+
 	public String getPusername() {
 		return pusername;
 	}
+
 	public void setPusername(String pusername) {
 		this.pusername = pusername;
 	}
-	
-	public String showScience() throws SQLException{
-		ArrayList<ProductInfo> ProductList=new ArrayList<ProductInfo>();
-		String ptype="科技";
-		ProductList=(ArrayList<ProductInfo>) pd.findProductByTpye(ptype);
+
+	public String showScience() throws SQLException {
+		ArrayList<ProductInfo> ProductList = new ArrayList<ProductInfo>();
+		String ptype = "科技";
+		ProductList = (ArrayList<ProductInfo>) pd.findProductByTpye(ptype);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductList", ProductList);
-		return "show";
+		return "showScience";
 	}
-	
-	public String showCartoon() throws SQLException{
-		ArrayList<ProductInfo> ProductList=new ArrayList<ProductInfo>();
-		String ptype="动漫";
-		ProductList=(ArrayList<ProductInfo>) pd.findProductByTpye(ptype);
+
+	public String showCartoon() throws SQLException {
+		ArrayList<ProductInfo> ProductList = new ArrayList<ProductInfo>();
+		String ptype = "动漫";
+		ProductList = (ArrayList<ProductInfo>) pd.findProductByTpye(ptype);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductList", ProductList);
-		return "show";
+		return "showCartoon";
 	}
-	
-	public String showVideo() throws SQLException{
-		ArrayList<ProductInfo> ProductList=new ArrayList<ProductInfo>();
-		String ptype="影视";
-		ProductList=(ArrayList<ProductInfo>) pd.findProductByTpye(ptype);
+
+	public String showVideo() throws SQLException {
+		ArrayList<ProductInfo> ProductList = new ArrayList<ProductInfo>();
+		String ptype = "影视";
+		ProductList = (ArrayList<ProductInfo>) pd.findProductByTpye(ptype);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductList", ProductList);
-		return "show";
+		return "showVideo";
 	}
-	
-	public String showAudio() throws SQLException{
-		ArrayList<ProductInfo> ProductList=new ArrayList<ProductInfo>();
-		String ptype="音像";
-		ProductList=(ArrayList<ProductInfo>) pd.findProductByTpye(ptype);
+
+	public String showAudio() throws SQLException {
+		ArrayList<ProductInfo> ProductList = new ArrayList<ProductInfo>();
+		String ptype = "音像";
+		ProductList = (ArrayList<ProductInfo>) pd.findProductByTpye(ptype);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductList", ProductList);
-		return "show";
+		return "showAudio";
 	}
-	
+
 	public String search() throws SQLException {
-		ArrayList<ProductInfo> ProductList=new ArrayList<ProductInfo>();
+		ArrayList<ProductInfo> ProductList = new ArrayList<ProductInfo>();
 		String name = null;
-		ProductList=(ArrayList<ProductInfo>) pd.findProductLikeName(name);
+		ProductList = (ArrayList<ProductInfo>) pd.findProductLikeName(name);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductList", ProductList);
-		return "show";
+		return "search";
 	}
-	
+
 	public String showDetail() throws SQLException {
-		ProductInfo ProductDetail=new ProductInfo();
+		ProductInfo ProductDetail = new ProductInfo();
 		int pid = 0;
-		ProductDetail=(ProductInfo) pd.findProductById(pid);
+		ProductDetail = (ProductInfo) pd.findProductById(pid);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductDetail", ProductDetail);
-		return "show";
+		return "showDetail";
 	}
-	
+
 }
