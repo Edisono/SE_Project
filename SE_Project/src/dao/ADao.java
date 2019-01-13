@@ -223,7 +223,7 @@ public class ADao {
 		PreparedStatement ps=null;
 		//conn=DBUtil.getConnection();
 		conn=C3P0JdbcUtil.getConnection();
-		String sql = "UPDATE AInfo SET atitle=?, acontent=?WHERE aid=?";
+		String sql = "UPDATE AInfo SET atitle=?, acontent=? WHERE aid=?";
 		ps = conn.prepareStatement(sql);
 		ps.setString(1, a.getAtitle());
 		ps.setString(2, a.getAcontent());
