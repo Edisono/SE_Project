@@ -46,9 +46,11 @@
 				<div class="card">
 					<table class="table card-table table-vcenter">
 						<tr>
-							<td><a href="./product_showDetail?pid=<s:property value="#xx.pid"/>"
-								class="card-aside-column"
-								style="background-image: url(<s:property value="#xx.pimage"/>)"></a></td>
+							<td><a
+								href="./product_showDetail?pid=<s:property value="#xx.pid"/>"
+								class="card-aside-column"><img width='60' height='60'
+									src="<s:property value="#xx.pimage"/>" alt="咨询图片"
+									class="rounded"></a></td>
 
 							<td><s:property value="#xx.pname" /></td>
 							<td
@@ -59,8 +61,9 @@
 								offers</td>
 							<td class="text-right"><strong><s:property
 										value="#xx.pprice" /></strong></td>
-							<td class="text-right"><a href="./product_showDetail?pid=<s:property value="#xx.pid"/>" class="btn btn-primary"><i
-									class="fe fe-plus"></i> 查看详情</a></td>
+							<td class="text-right"><a
+								href="./product_showDetail?pid=<s:property value="#xx.pid"/>"
+								class="btn btn-primary"><i class="fe fe-plus"></i> 查看详情</a></td>
 						</tr>
 					</table>
 				</div>

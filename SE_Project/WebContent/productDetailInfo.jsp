@@ -22,10 +22,7 @@
 								src="demo/photos/nathan-anderson-316188-500.jpg" alt="产品图片"
 								class="rounded">
 							</a> -->
-							<a
-								href="./product_showDetail?pid=<s:property value="%{#session.ProductDetail.pid}"/>"
-								class="card-aside-column"
-								style="background-image: url(<s:property value="%{#session.ProductDetail.pimage}"/>)"></a>
+							<img src="<s:property value="%{#session.ProductDetail.pimage}"/>" alt="咨询图片" class="rounded">
 						</div>
 						<div class="text-wrap p-lg-3">
 							<h4 class="card-title">

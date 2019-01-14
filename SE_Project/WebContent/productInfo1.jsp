@@ -47,8 +47,7 @@
 					<table class="table card-table table-vcenter">
 						<tr>
 							<td><a href="./product_showDetail?pid=<s:property value="#xx.pid"/>"
-								class="card-aside-column"
-								style="background-image: url(<s:property value="#xx.pimage"/>)"></a></td>
+						class="card-aside-column"><img  width='60'   height='60' src="<s:property value="#xx.pimage"/>" alt="咨询图片" class="rounded"></a></td>
 
 							<td><s:property value="#xx.pname" /></td>
 							<td
