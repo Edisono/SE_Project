@@ -201,7 +201,7 @@ public class QDao {
 		ps = conn.prepareStatement(sql);
 		ps.setString(1, q.getQtitle());
 		ps.setString(2, q.getQcontent());
-		ps.setDate(3, (Date) q.getQdate());
+		ps.setDate(3,  (Date) q.getQdate());
 		ps.setString(4, q.getQimage());
 		ps.setInt(5, q.getQid());
 		int flag = ps.executeUpdate();

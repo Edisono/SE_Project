@@ -129,13 +129,7 @@ public class UserAction extends ActionSupport{
 	
 	//鑾峰彇鐢ㄦ埛淇℃伅骞舵樉绀哄湪淇敼椤甸潰
 	public String modify() throws Exception{
-		/*
-		HttpServletRequest request = ServletActionContext.getRequest();
-		UserInfo user = (UserInfo)request.getSession().getAttribute("user");
-		
-		request.getSession().setAttribute("user", user);	
-		*/	
-		
+
 		HttpServletRequest request = ServletActionContext.getRequest();
 		
 		UserInfo user = new UserInfo();
@@ -158,4 +152,6 @@ public class UserAction extends ActionSupport{
 
 		
 	}
+	
+
 }
