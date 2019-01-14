@@ -99,15 +99,14 @@ public class UserDao {
 
 		conn = C3P0JdbcUtil.getConnection();
 
-		String sql = "update userinfo set email=?,username=?,qq=?,phone=?,address=?,profile=? where uid=?";
+		String sql = "update userinfo set username=?,qq=?,phone=?,address=?,profile=? where uid=?";
 		ps = conn.prepareStatement(sql);
-		ps.setString(1,user.getEmail());
-		ps.setString(2, user.getUsername());
-		ps.setString(3, user.getQQ());
-		ps.setString(4, user.getPhone());
-		ps.setString(5, user.getAddress());
-		ps.setString(6, user.getProfile());
-		ps.setInt(7, user.getUid());
+		ps.setString(1, user.getUsername());
+		ps.setString(2, user.getQQ());
+		ps.setString(3, user.getPhone());
+		ps.setString(4, user.getAddress());
+		ps.setString(5, user.getProfile());
+		ps.setInt(6, user.getUid());
 		
 		int i = ps.executeUpdate();
 

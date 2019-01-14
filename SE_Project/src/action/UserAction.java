@@ -137,7 +137,6 @@ public class UserAction extends ActionSupport{
 		user.setUid(u.getUid());
 
 		
-		user.setEmail( request.getParameter("email"));
 		user.setUsername(request.getParameter("username"));
 		user.setQQ(request.getParameter("QQ"));
 		user.setPhone(request.getParameter("phone"));
