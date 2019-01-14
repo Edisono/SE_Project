@@ -20,7 +20,7 @@ document.getElementsByTagName("title")[0].innerText = '编辑个人信息';
                     <div class="col-md-5">
                      <div class="form-group">
                      <div class="col-auto">
-                          <div class="avatar avatar-xl" style="background-image: url(demo/faces/female/9.jpg)"></div>
+                          <div class="avatar avatar-xl" style="background-image: url(<s:property value="%{#session.user.avator}"/>)"></div>
                       </div>
                       </div>
                       <div class="form-group">
@@ -28,39 +28,39 @@ document.getElementsByTagName("title")[0].innerText = '编辑个人信息';
                       </div>
                     <div class="form-group">
                         <label class="form-label">邮箱地址</label>
-                        <input type="text" class="form-control" name="email" readonly="true" placeholder="email" value="%{#session.user.email}">
+                        <input type="text" class="form-control" name="email" readonly="true" placeholder="email" value="<s:property value="%{#session.user.email}"/>">
                       
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group"> 
                         <label class="form-label">用户昵称/企业名</label>
-                        <input type="text" class="form-control" placeholder="Username" name="username" value="%{#session.user.username}">
+                        <input type="text" class="form-control" placeholder="Username" name="username" value="<s:property value="%{#session.user.username}"/>">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="form-label">QQ</label>
-                        <input type="text"   name="QQ"  class="form-control" placeholder="QQ" value="%{#session.user.QQ}">
+                        <input type="text"   name="QQ"  class="form-control" placeholder="QQ" value="<s:property value="%{#session.user.QQ}"/>">
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-6">
                       <div class="form-group">
                         <label class="form-label">联系方式</label>
-                        <input type="text" name="phone" class="form-control"  placeholder="Tel" value="%{#session.user.phone}">
+                        <input type="text" name="phone" class="form-control"  placeholder="Tel" value="<s:property value="%{#session.user.phone}"/>">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="form-label">地址</label>
-                        <input type="email" class="form-control"  name="address"  placeholder="%{#session.user.address}">
+                        <input type="email" class="form-control"  name="address"  placeholder="<s:property value="%{#session.user.address}"/>">
                       </div>
                     </div>
                   
                     <div class="col-md-12">
                       <div class="form-group mb-0">
                         <label class="form-label">个人简介</label>
-                        <textarea name="profile" rows="5" class="form-control" placeholder="Here can be your description" value="%{#session.user.profile}"></textarea>
+                        <textarea name="profile" rows="5" class="form-control" placeholder="Here can be your description"><s:property value="%{#session.user.profile}"/></textarea>
                       
                       </div> 
                     </div>
