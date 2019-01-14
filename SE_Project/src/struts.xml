@@ -17,7 +17,7 @@
 
 		<!-- 用户的action -->
 		<action name="user_*" class="action.UserAction" method="{1}">
-			<result name="modify">/modifyInfo.jsp</result>
+			<result name="modify">/index.jsp</result>
 		</action>
 
 		<!-- 资讯的action -->
