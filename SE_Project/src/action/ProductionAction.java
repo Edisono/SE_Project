@@ -143,7 +143,6 @@ public class ProductionAction extends ActionSupport {
 		ProductInfo ProductDetail = new ProductInfo();
 		ProductDetail = pd.findProductById(pid);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductDetail", ProductDetail);
-		System.out.println(pid);
 		ArrayList<MessageInfo> ProductMessage = new ArrayList<MessageInfo>();
 		ProductMessage = (ArrayList<MessageInfo>) pd.getProductMessage(pid);
 		ServletActionContext.getRequest().getSession().setAttribute("ProductMessage", ProductMessage);
